@@ -15,6 +15,8 @@ These questions and step-by-step screenshots were stored in Notion as temporary 
 
 I am going to use Excel, Microsoft SQL Server Management Studio, and Power BI.
 
+This connects with [[Data Analysis Portfolio Project #3 | End-to-End SQL to Dashboard]] as another portfolio-building note.
+
 The tutorial video:
 
 <video src="https://www.youtube.com/watch?v=S2zBHmkRbhY"></video>

@@ -3,15 +3,16 @@
 Markdown content database for the Max Hoang website.
 
 The Next.js website reads this repository through the GitHub API. Keep
-published website records inside:
+published website records inside the `content` folder:
 
 ```text
-09 Website Database/
-|-- Blog/
-|-- Awards/
-|-- Events/
-|-- Photos/
-`-- Short Videos/
+content/
+|-- posts/
+|-- awards/
+|-- events/
+|-- photos/
+|-- short-videos/
+`-- assets/
 ```
 
 Set `published: true` in frontmatter to make a record live. Set
@@ -23,5 +24,5 @@ The website is configured to read:
 OBSIDIAN_VAULT_GITHUB_OWNER=HoangCuongMax
 OBSIDIAN_VAULT_GITHUB_REPO=maxhoang-blog-content
 OBSIDIAN_VAULT_GITHUB_BRANCH=main
-OBSIDIAN_VAULT_CONTENT_PATH=09 Website Database
+OBSIDIAN_VAULT_CONTENT_PATH=content
 ```

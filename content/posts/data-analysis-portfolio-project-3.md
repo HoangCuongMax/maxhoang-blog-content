@@ -18,6 +18,8 @@ There are 9 videos in the series, and each video guides you through building a c
 
 This could be a really good learning step toward building databases and dashboards in data analytics.
 
+Related note: [[Data Analyst Portfolio Project #1 | Build a Database | Develop SQL | Create a Dashboard]].
+
 <video src="https://www.youtube.com/watch?v=oQSX_y2wfhc"></video>
 
 <video src="https://www.youtube.com/watch?v=PoOCscm5hTU"></video>
