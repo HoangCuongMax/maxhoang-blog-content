@@ -10,6 +10,153 @@ The chatbot should act as a personal portfolio website assistant and showcase ch
 
 Use a step-by-step approach so the website structure is not broken. Start with the UI only, then add content loading, retrieval, AI response generation, testing, and deployment.
 
+The system should be built in an upgradeable way. Version 1 can use a local JSON index, but the architecture must be ready to move to Supabase later without rewriting the whole chatbot.
+
+Core design rule:
+
+> The chatbot should not care whether the knowledge comes from JSON or Supabase. It should only call a retriever interface.
+
+This means JSON storage is only the first storage option. Supabase can be added later by replacing the retriever layer.
+
+---
+
+# Upgradeable RAG Architecture
+
+## Target Architecture
+
+```txt
+Markdown / Obsidian notes
+        ↓
+content loader
+        ↓
+chunking system
+        ↓
+embedding system
+        ↓
+retriever interface
+        ↓
+chat API
+        ↓
+chatbot UI
+```
+
+## Recommended Folder Structure
+
+```txt
+src/
+  lib/
+    chatbot/
+      content-loader.ts
+      chunker.ts
+      embedder.ts
+      retriever.ts
+      prompts.ts
+      types.ts
+      retrievers/
+        json-retriever.ts
+        supabase-retriever.ts
+
+scripts/
+  index-chatbot-content.ts
+  upload-chatbot-index-to-supabase.ts
+
+data/
+  chatbot-index.json
+  chatbot-embeddings.json
+```
+
+## Shared Chunk Type
+
+The project should use one shared chunk type from the beginning, even before Supabase is added.
+
+```ts
+export type ChatbotChunk = {
+  id: string;
+  title: string;
+  path: string;
+  slug?: string;
+  tags?: string[];
+  category?: string;
+  content: string;
+  sourceUrl?: string;
+  embedding?: number[];
+  createdAt?: string;
+  updatedAt?: string;
+};
+```
+
+## Retriever Interface
+
+All retrieval systems should follow the same interface.
+
+```ts
+export interface Retriever {
+  search(query: string, limit?: number): Promise<ChatbotChunk[]>;
+}
+```
+
+Version 1 can use:
+
+```ts
+const retriever = new JsonRetriever();
+```
+
+Later, the production version can use:
+
+```ts
+const retriever = new SupabaseRetriever();
+```
+
+The chat API should not contain hard-coded JSON search logic. JSON logic should stay inside `json-retriever.ts` only.
+
+## Storage Upgrade Path
+
+```txt
+Version 1:
+Markdown → chunks → chatbot-index.json → keyword search
+
+Version 2:
+Markdown → chunks → embeddings → chatbot-embeddings.json → semantic search
+
+Version 3:
+Markdown → chunks → embeddings → Supabase pgvector → production RAG search
+```
+
+## Future Supabase Table Design
+
+```sql
+create table chatbot_documents (
+  id text primary key,
+  title text,
+  path text,
+  slug text,
+  tags text[],
+  category text,
+  content text,
+  source_url text,
+  embedding vector(1536),
+  created_at timestamp,
+  updated_at timestamp
+);
+```
+
+## RAG Update Rule
+
+Markdown content is the source of truth. The RAG index is only a searchable copy of the Markdown content.
+
+Whenever website content changes, the RAG index should be regenerated or updated.
+
+Update flow:
+
+```txt
+Update Obsidian note
+→ push to GitHub
+→ website rebuilds or GitHub Action runs
+→ indexing script reads Markdown
+→ JSON index or Supabase vector table updates
+→ chatbot answers from latest indexed content
+```
+
 ---
 
 # Phase 1: Confirm Project Scope
@@ -22,11 +169,13 @@ Use a step-by-step approach so the website structure is not broken. Start with t
 - [ ] Confirm content source: Markdown/Obsidian files.
 - [ ] Confirm the chatbot will only answer based on available website content.
 - [ ] Confirm fallback behaviour for unsupported questions.
+- [ ] Confirm JSON-first but Supabase-ready architecture.
 
 ## Output
 
 - Clear project scope.
 - Confirmed chatbot role and limitations.
+- Confirmed upgrade path from JSON to Supabase.
 
 ---
 
@@ -76,6 +225,7 @@ Prepare the website Markdown/Obsidian content so the chatbot can use it later.
 - [ ] Remove unnecessary Markdown syntax where needed.
 - [ ] Keep useful headings and metadata.
 - [ ] Create a clean content format for indexing.
+- [ ] Map content fields to the shared `ChatbotChunk` type.
 
 ## Suggested Included Content
 
@@ -89,6 +239,7 @@ Prepare the website Markdown/Obsidian content so the chatbot can use it later.
 ## Output
 
 - Markdown content can be loaded and prepared for search.
+- Content format is ready for both JSON and Supabase storage.
 
 ---
 
@@ -100,13 +251,15 @@ Create a script that reads all Markdown files and converts them into searchable 
 
 ## Tasks
 
-- [ ] Create a script such as `scripts/index-chatbot-content.ts`.
+- [ ] Create `scripts/index-chatbot-content.ts`.
 - [ ] Load Markdown files from the selected content folders.
 - [ ] Parse frontmatter.
 - [ ] Split long content into smaller chunks.
 - [ ] Keep metadata for each chunk.
-- [ ] Include title, slug, path, tags, and source URL where possible.
-- [ ] Save indexed content to a local JSON file for the first version.
+- [ ] Include title, slug, path, tags, category, source URL, created date, and updated date where possible.
+- [ ] Generate stable chunk IDs so updates can replace old content later.
+- [ ] Save indexed content to `data/chatbot-index.json` for the first version.
+- [ ] Keep the structure close to the future Supabase table design.
 
 ## Example Chunk Fields
 
@@ -115,17 +268,46 @@ Create a script that reads all Markdown files and converts them into searchable 
 - `slug`
 - `path`
 - `tags`
+- `category`
 - `content`
 - `sourceUrl`
+- `createdAt`
+- `updatedAt`
 
 ## Output
 
-- A searchable content index exists.
+- A searchable JSON content index exists.
 - The chatbot has a structured knowledge source.
+- The index can later be uploaded to Supabase with minimal changes.
 
 ---
 
-# Phase 5: Add Simple Search First
+# Phase 5: Add Retriever Interface and JSON Retriever
+
+## Goal
+
+Build retrieval in a modular way so JSON can be replaced by Supabase later.
+
+## Tasks
+
+- [ ] Create `src/lib/chatbot/types.ts`.
+- [ ] Add the shared `ChatbotChunk` type.
+- [ ] Create `src/lib/chatbot/retriever.ts`.
+- [ ] Add the shared `Retriever` interface.
+- [ ] Create `src/lib/chatbot/retrievers/json-retriever.ts`.
+- [ ] Load `data/chatbot-index.json`.
+- [ ] Implement simple keyword search.
+- [ ] Return results using the shared `ChatbotChunk` type.
+- [ ] Keep the chat API independent from JSON details.
+
+## Output
+
+- JSON retrieval works.
+- The chatbot can later use Supabase by changing the retriever only.
+
+---
+
+# Phase 6: Add Simple Search First
 
 ## Goal
 
@@ -154,7 +336,7 @@ Before using AI, test whether the chatbot can find relevant website content usin
 
 ---
 
-# Phase 6: Add AI API Connection
+# Phase 7: Add AI API Connection
 
 ## Goal
 
@@ -173,7 +355,7 @@ Connect the chatbot to an AI model so it can generate natural answers from retri
 - [ ] Store API key in environment variables.
 - [ ] Never expose the API key to the browser.
 - [ ] Send the user question to the backend.
-- [ ] Retrieve relevant Markdown chunks.
+- [ ] Use the retriever interface to retrieve relevant Markdown chunks.
 - [ ] Send only relevant chunks to the AI model.
 - [ ] Ask the model to answer only based on the provided context.
 - [ ] Return the answer to the chatbot UI.
@@ -182,39 +364,95 @@ Connect the chatbot to an AI model so it can generate natural answers from retri
 
 - The chatbot can generate natural answers.
 - The answer is based on website content.
+- The chat API remains storage-independent.
 
 ---
 
-# Phase 7: Add RAG Behaviour
+# Phase 8: Add Embeddings in JSON First
 
 ## Goal
 
-Improve the chatbot by using Retrieval-Augmented Generation.
+Improve retrieval quality using embeddings while still avoiding database complexity at the beginning.
 
 ## Tasks
 
-- [ ] Convert Markdown chunks into embeddings.
-- [ ] Store embeddings in a vector database.
-- [ ] Use semantic search to find relevant content.
-- [ ] Retrieve the top matching chunks for each question.
-- [ ] Generate answers using only retrieved context.
-- [ ] Include source titles or links when possible.
-
-## Possible Vector Storage Options
-
-- [ ] Supabase with pgvector
-- [ ] Local JSON for demo version
-- [ ] Upstash Vector
-- [ ] Pinecone
-- [ ] Chroma for local testing
+- [ ] Create `src/lib/chatbot/embedder.ts`.
+- [ ] Choose an embedding provider.
+- [ ] Generate embeddings for each Markdown chunk.
+- [ ] Save embeddings to `data/chatbot-embeddings.json`.
+- [ ] Update `json-retriever.ts` to support semantic search.
+- [ ] Compare user question embedding against stored chunk embeddings.
+- [ ] Return the top matching chunks.
+- [ ] Keep the embedding data structure compatible with Supabase `pgvector`.
 
 ## Output
 
-- The chatbot can answer more accurately using semantic search.
+- The chatbot can search semantically using local JSON embeddings.
+- The system is closer to production RAG without needing Supabase yet.
 
 ---
 
-# Phase 8: Add Safety and Fallback Rules
+# Phase 9: Prepare Supabase Upgrade Layer
+
+## Goal
+
+Prepare the codebase so Supabase can be added later without rewriting the chatbot.
+
+## Tasks
+
+- [ ] Create `src/lib/chatbot/retrievers/supabase-retriever.ts` as a placeholder.
+- [ ] Create `scripts/upload-chatbot-index-to-supabase.ts` as a placeholder.
+- [ ] Document the Supabase table schema.
+- [ ] Keep chunk IDs stable so rows can be inserted or updated.
+- [ ] Use environment variables for future Supabase URL and service key.
+- [ ] Do not connect Supabase until the JSON version works.
+
+## Future Supabase Environment Variables
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+OPENAI_API_KEY=
+OPENROUTER_API_KEY=
+```
+
+## Output
+
+- Supabase migration path is ready.
+- Version 1 can stay simple while Version 3 is planned properly.
+
+---
+
+# Phase 10: Add RAG Behaviour
+
+## Goal
+
+Use Retrieval-Augmented Generation properly.
+
+## Tasks
+
+- [ ] Retrieve relevant chunks before answering.
+- [ ] Limit the number of chunks sent to the model.
+- [ ] Include source title and source URL in the context.
+- [ ] Generate answers using only retrieved context.
+- [ ] Include source titles or links when possible.
+- [ ] Use fallback response if retrieval confidence is low.
+
+## Storage Options
+
+- [ ] Local JSON for MVP.
+- [ ] Local embeddings JSON for improved demo.
+- [ ] Supabase with pgvector for production.
+- [ ] Upstash Vector, Pinecone, or Chroma if needed later.
+
+## Output
+
+- The chatbot can answer accurately using website content.
+- The RAG system is storage-agnostic.
+
+---
+
+# Phase 11: Add Safety and Fallback Rules
 
 ## Goal
 
@@ -240,7 +478,7 @@ I do not have enough information about that in Max's website content. I can help
 
 ---
 
-# Phase 9: Add Website Navigation Support
+# Phase 12: Add Website Navigation Support
 
 ## Goal
 
@@ -264,7 +502,36 @@ Help users move around the website.
 
 ---
 
-# Phase 10: Test the Chatbot
+# Phase 13: Add Automatic Index Update Workflow
+
+## Goal
+
+Make sure the RAG system updates when website Markdown content changes.
+
+## Option A: Build-Time Update
+
+- [ ] Run the indexing script during website build.
+- [ ] Regenerate `chatbot-index.json` or embeddings before deployment.
+- [ ] Use this for the simplest automated workflow.
+
+## Option B: Manual Update Script
+
+- [ ] Run `npm run index-chatbot-content` manually after content changes.
+- [ ] Use this for early development and assignment demo.
+
+## Option C: GitHub Action Update
+
+- [ ] Trigger a GitHub Action when Markdown files change.
+- [ ] Run the indexing script automatically.
+- [ ] Later, upload the updated index to Supabase.
+
+## Output
+
+- The chatbot knowledge base can stay updated as the website content changes.
+
+---
+
+# Phase 14: Test the Chatbot
 
 ## Goal
 
@@ -299,7 +566,7 @@ Evaluate whether the chatbot meets the assignment and website goals.
 
 ---
 
-# Phase 11: Prepare Assignment Demonstration
+# Phase 15: Prepare Assignment Demonstration
 
 ## Goal
 
@@ -310,6 +577,7 @@ Prepare the chatbot for live presentation.
 - [ ] Prepare a short intro about the chatbot domain.
 - [ ] Explain the challenge: helping users explore personal website content.
 - [ ] Explain the approach: Markdown content plus retrieval plus AI response.
+- [ ] Explain the upgradeable architecture: JSON first, Supabase later.
 - [ ] Show live chatbot testing.
 - [ ] Show fallback behaviour.
 - [ ] Explain limitations.
@@ -329,7 +597,7 @@ Prepare the chatbot for live presentation.
 
 ---
 
-# Phase 12: Deploy and Monitor
+# Phase 16: Deploy and Monitor
 
 ## Goal
 
@@ -360,6 +628,9 @@ The MVP should include:
 - [ ] Chat window UI.
 - [ ] User input and assistant response display.
 - [ ] Markdown content loading.
+- [ ] `ChatbotChunk` shared type.
+- [ ] `Retriever` interface.
+- [ ] JSON retriever.
 - [ ] Basic retrieval from website content.
 - [ ] AI-generated answer based on retrieved content.
 - [ ] Fallback response.
@@ -367,16 +638,36 @@ The MVP should include:
 
 ---
 
+# Supabase-Ready Checklist
+
+Even before using Supabase, the project should include:
+
+- [ ] Stable chunk IDs.
+- [ ] Supabase-style metadata fields.
+- [ ] Storage-independent retriever interface.
+- [ ] JSON retriever separated from chat API.
+- [ ] Placeholder Supabase retriever file.
+- [ ] Placeholder Supabase upload script.
+- [ ] Documented Supabase table schema.
+- [ ] Environment variable plan.
+- [ ] Clear update workflow for regenerated RAG indexes.
+
+---
+
 # Recommended First Build Order
 
 1. Build the chatbot UI only.
 2. Create a local content index from Markdown files.
-3. Add simple keyword search.
-4. Add API route for chatbot response.
-5. Connect OpenRouter or OpenAI.
-6. Add RAG/embedding later.
-7. Add source links and website navigation support.
-8. Test and prepare the assignment demo.
+3. Add shared types and retriever interface.
+4. Add JSON retriever.
+5. Add simple keyword search.
+6. Add API route for chatbot response.
+7. Connect OpenRouter or OpenAI.
+8. Add local embeddings JSON.
+9. Add placeholder Supabase retriever and upload script.
+10. Add source links and website navigation support.
+11. Test and prepare the assignment demo.
+12. Move to Supabase after the JSON version works.
 
 ---
 
@@ -391,3 +682,6 @@ The MVP should include:
 - Keep the chatbot small and simple for the first version.
 - Prefer readable code over complex architecture.
 - Add comments where helpful for a beginner developer.
+- Keep JSON storage isolated inside `json-retriever.ts`.
+- Keep Supabase logic isolated inside `supabase-retriever.ts`.
+- The chat API should only call the retriever interface.
