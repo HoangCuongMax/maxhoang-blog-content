@@ -1,4 +1,29 @@
+---
+title: Personal Portfolio Chatbot Build Plan
+type: build-plan
+status: active
+project: personal-portfolio-chatbot
+domain: personal portfolio website assistant
+website: https://maxhoang.com.au
+tags:
+  - personal-chatbot
+  - build-plan
+  - rag
+  - supabase-ready
+  - maxhoang-website
+---
+
 # Personal Portfolio Chatbot Build Plan
+
+## Navigation
+
+- Project index: [[personal-chatbot-index]]
+- Assignment requirements: [[expert-chatbot-assignment-requirements]]
+- Project brief: [[personal-portfolio-chatbot-brief]]
+
+## Relationship to Project
+
+This note is the implementation roadmap for the chatbot described in [[personal-portfolio-chatbot-brief]]. It also maps the project back to the assignment requirements in [[expert-chatbot-assignment-requirements]].
 
 ## Goal
 
@@ -685,3 +710,9 @@ Even before using Supabase, the project should include:
 - Keep JSON storage isolated inside `json-retriever.ts`.
 - Keep Supabase logic isolated inside `supabase-retriever.ts`.
 - The chat API should only call the retriever interface.
+
+## Related Notes
+
+- [[personal-chatbot-index]]
+- [[expert-chatbot-assignment-requirements]]
+- [[personal-portfolio-chatbot-brief]]
