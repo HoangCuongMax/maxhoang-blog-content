@@ -1,9 +1,10 @@
 ---
 title: Website Assistant Chatbot Build Plan
 slug: website-assistant-chatbot-build-plan
-publish: false
-published: false
-status: Draft
+publish: true
+published: true
+status: Published
+date: 2026-05-19
 category: planning
 tags:
   - chatbot
