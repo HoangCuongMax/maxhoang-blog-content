@@ -1,4 +1,27 @@
+---
+title: Expert Chatbot Assignment Requirements
+type: assignment-requirements
+status: active
+project: personal-portfolio-chatbot
+domain: personal portfolio website assistant
+tags:
+  - expert-chatbot
+  - assignment
+  - personal-chatbot
+  - rag
+---
+
 # Expert Chatbot Assignment Requirements
+
+## Navigation
+
+- Project index: [[personal-chatbot-index]]
+- Project brief: [[personal-portfolio-chatbot-brief]]
+- Build plan: [[personal-chatbot-build-plan]]
+
+## Relationship to Project
+
+This note defines the assignment requirements for the expert chatbot task. It connects directly to [[personal-portfolio-chatbot-brief]], which adapts these requirements to the personal portfolio website assistant domain, and [[personal-chatbot-build-plan]], which turns the requirements into implementation steps.
 
 ## Assignment Overview
 
@@ -16,10 +39,16 @@ The chatbot should be able to:
 
 ## Selected Domain
 
-- [ ] Decide the chatbot domain.
-- [ ] Explain why this domain is useful or important.
-- [ ] Define the target users.
-- [ ] Define the main problems the chatbot will help solve.
+For this project, the selected domain is:
+
+> Personal portfolio website assistant
+
+This domain is explained in detail in [[personal-portfolio-chatbot-brief]].
+
+- [x] Decide the chatbot domain.
+- [x] Explain why this domain is useful or important.
+- [x] Define the target users.
+- [x] Define the main problems the chatbot will help solve.
 - [ ] Confirm whether the chatbot will connect to the ABSA project/report or use another dataset/source.
 
 Possible domains:
@@ -35,6 +64,8 @@ Possible domains:
 - Personal portfolio website assistant
 
 ## Core Chatbot Requirements
+
+These requirements are applied to the project brief in [[personal-portfolio-chatbot-brief]] and implemented through [[personal-chatbot-build-plan]].
 
 - [ ] The chatbot answers questions related to the selected domain.
 - [ ] The chatbot outputs clear sentence-level answers.
@@ -69,6 +100,8 @@ Possible approaches:
 
 ## Data and Knowledge Source Checklist
 
+For this project, the primary knowledge source is the Markdown/Obsidian content used by `maxhoang.com.au`.
+
 - [ ] Identify the knowledge source.
 - [ ] Explain where the data comes from.
 - [ ] Explain how the data was cleaned or prepared.
@@ -88,6 +121,8 @@ Possible sources:
 - Obsidian notes
 
 ## Model and Approach Checklist
+
+The planned model and RAG approach are developed in [[personal-chatbot-build-plan]].
 
 - [ ] Name the model or method used.
 - [ ] Explain why this approach was selected.
@@ -171,6 +206,8 @@ The presentation can be divided into four parts for four members or adapted for 
 
 ## Future Work Ideas
 
+These ideas are also connected to the upgrade path in [[personal-chatbot-build-plan]].
+
 - [ ] Improve the training data.
 - [ ] Add more domain knowledge.
 - [ ] Improve response accuracy.
@@ -194,3 +231,9 @@ The presentation can be divided into four parts for four members or adapted for 
 - [ ] Presentation slides completed.
 - [ ] Conclusion and future work completed.
 - [ ] Team member roles divided clearly.
+
+## Related Notes
+
+- [[personal-chatbot-index]]
+- [[personal-portfolio-chatbot-brief]]
+- [[personal-chatbot-build-plan]]
