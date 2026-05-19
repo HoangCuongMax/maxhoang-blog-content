@@ -1,4 +1,28 @@
+---
+title: Personal Portfolio Website Assistant Chatbot Brief
+type: project-brief
+status: active
+project: personal-portfolio-chatbot
+domain: personal portfolio website assistant
+website: https://maxhoang.com.au
+tags:
+  - personal-chatbot
+  - portfolio-assistant
+  - rag
+  - maxhoang-website
+---
+
 # Personal Portfolio Website Assistant Chatbot Brief
+
+## Navigation
+
+- Project index: [[personal-chatbot-index]]
+- Assignment requirements: [[expert-chatbot-assignment-requirements]]
+- Build plan: [[personal-chatbot-build-plan]]
+
+## Relationship to Project
+
+This note translates the assignment requirements from [[expert-chatbot-assignment-requirements]] into a specific chatbot idea for `maxhoang.com.au`. The implementation steps are planned in [[personal-chatbot-build-plan]].
 
 ## Project Title
 
@@ -57,6 +81,8 @@ Main content source:
 
 The chatbot should answer only based on available website and Markdown content. If the information is not available, it should say that it does not have enough information instead of guessing.
 
+This knowledge source connects directly to the RAG update workflow in [[personal-chatbot-build-plan]].
+
 ## Main Use Cases
 
 The chatbot should be able to help users with questions such as:
@@ -72,6 +98,8 @@ The chatbot should be able to help users with questions such as:
 - What content is available on the website?
 
 ## Functional Requirements
+
+These functional requirements come from [[expert-chatbot-assignment-requirements]] and are implemented step by step in [[personal-chatbot-build-plan]].
 
 - [ ] The chatbot answers questions related to the selected domain.
 - [ ] The chatbot outputs clear sentence-level answers.
@@ -134,13 +162,15 @@ Example fallback response:
 
 The preferred approach is a retrieval-based or RAG chatbot.
 
+The technical implementation is planned in [[personal-chatbot-build-plan]]. The preferred architecture is JSON-first but Supabase-ready, so the first working version can stay simple while still allowing a future production upgrade.
+
 Possible pipeline:
 
 1. Read Markdown files from the Obsidian/blog content repository.
 2. Extract title, headings, tags, metadata, and body content.
 3. Split content into small searchable chunks.
 4. Create embeddings for each chunk.
-5. Store embeddings in a vector database.
+5. Store embeddings first in JSON, then later in Supabase if needed.
 6. Retrieve relevant chunks when a user asks a question.
 7. Generate an answer based only on retrieved content.
 8. Return a clear and helpful response in the website chatbot UI.
@@ -151,7 +181,8 @@ Possible pipeline:
 - Markdown/MDX content source
 - Obsidian notes as content management system
 - OpenRouter or OpenAI API for chatbot response generation
-- Supabase or another vector database for retrieval
+- JSON index for the first version
+- Supabase with pgvector for future production RAG
 - Embedding model for semantic search
 - Small chatbot widget UI using shadcn components
 
@@ -180,10 +211,19 @@ The demo can show:
 
 ## Future Improvements
 
+These improvements connect to the later phases in [[personal-chatbot-build-plan]].
+
 - [ ] Add source links to the exact blog posts used in each answer.
 - [ ] Add memory for follow-up questions.
 - [ ] Add multilingual support, especially English and Vietnamese.
 - [ ] Add analytics to see what visitors ask most often.
 - [ ] Add better filtering by topic, tag, or project type.
 - [ ] Add automatic content updates when new Obsidian notes are pushed to GitHub.
+- [ ] Add Supabase vector storage for production.
 - [ ] Add voice input or voice response in the future.
+
+## Related Notes
+
+- [[personal-chatbot-index]]
+- [[expert-chatbot-assignment-requirements]]
+- [[personal-chatbot-build-plan]]
