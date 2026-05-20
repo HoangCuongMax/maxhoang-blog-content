@@ -61,3 +61,8 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Public notes are now grouped by their subfolder inside `content/obsidian`.
   - Added folder navigation links at the top of `/obsidian`.
   - Kept the existing rule that only notes marked `publish: true` or `published: true` appear publicly.
+- Updated the chatbot interaction and positioning:
+  - Reframed Ana as a blog and audience assistant instead of mostly a personal-profile assistant.
+  - Added Motion animations to the launcher, intro bubble, chat window, messages, source buttons, and suggested prompts.
+  - Changed suggested prompts toward blog discovery, data notes, project write-ups, events, and subscribing.
+  - Kept reduced-motion support for accessibility.
