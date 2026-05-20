@@ -52,3 +52,7 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Introduces the assistant as Ana before the chat window opens.
   - Uses a lightweight typewriter animation.
   - Keeps the opened chatbot welcome/header consistent with the Ana assistant persona.
+- Fixed chatbot message/input overlap:
+  - Changed the chat window to a proper flex layout with fixed header/footer and a scrollable message area.
+  - Removed fragile fixed scroll-height calculations.
+  - Added bottom padding inside the message list so long answers do not hide behind the input box.
