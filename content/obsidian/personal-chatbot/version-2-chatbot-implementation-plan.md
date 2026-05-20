@@ -2,6 +2,7 @@
 title: Version 2 Chatbot Implementation Plan
 type: implementation-plan
 status: active
+published: true
 project: personal-portfolio-chatbot
 domain: personal portfolio website assistant
 tags:
@@ -202,4 +203,3 @@ The current system uses a manual update workflow:
 Future improvement:
 
 > This can be automated later using a build-time script, GitHub Action, or Supabase vector database.
-

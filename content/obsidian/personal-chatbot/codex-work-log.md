@@ -2,6 +2,7 @@
 title: Codex Work Log
 type: work-log
 status: active
+published: true
 project: personal-portfolio-chatbot
 tags:
   - codex

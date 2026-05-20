@@ -2,6 +2,7 @@
 title: Motion Update Website Track
 type: implementation-track
 status: active
+published: true
 project: maxhoang-website
 tags:
   - motion

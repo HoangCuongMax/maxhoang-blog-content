@@ -2,6 +2,7 @@
 title: Expert Chatbot Assignment Requirements
 type: assignment-requirements
 status: active
+published: true
 project: personal-portfolio-chatbot
 domain: personal portfolio website assistant
 tags:

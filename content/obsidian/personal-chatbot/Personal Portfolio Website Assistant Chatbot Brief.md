@@ -2,6 +2,7 @@
 title: Personal Portfolio Website Assistant Chatbot Brief
 type: project-brief
 status: active
+published: true
 project: personal-portfolio-chatbot
 domain: personal portfolio website assistant
 website: https://maxhoang.com.au

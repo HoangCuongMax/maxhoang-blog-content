@@ -2,6 +2,7 @@
 title: Personal Chatbot Project Index
 type: project-index
 status: active
+published: true
 project: personal-portfolio-chatbot
 domain: personal portfolio website assistant
 tags:

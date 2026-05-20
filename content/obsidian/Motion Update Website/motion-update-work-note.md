@@ -2,6 +2,7 @@
 title: Motion Update Website Work Note
 type: work-note
 status: active
+published: true
 project: maxhoang-website
 tags:
   - motion

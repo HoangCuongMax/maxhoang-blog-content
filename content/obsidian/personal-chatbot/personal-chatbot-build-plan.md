@@ -2,6 +2,7 @@
 title: Personal Portfolio Chatbot Build Plan
 type: build-plan
 status: active
+published: true
 project: personal-portfolio-chatbot
 domain: personal portfolio website assistant
 website: https://maxhoang.com.au
