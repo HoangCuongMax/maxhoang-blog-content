@@ -56,3 +56,7 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Changed the chat window to a proper flex layout with fixed header/footer and a scrollable message area.
   - Removed fragile fixed scroll-height calculations.
   - Added bottom padding inside the message list so long answers do not hide behind the input box.
+- Updated the website Obsidian notes page:
+  - Public notes are now grouped by their subfolder inside `content/obsidian`.
+  - Added folder navigation links at the top of `/obsidian`.
+  - Kept the existing rule that only notes marked `publish: true` or `published: true` appear publicly.
