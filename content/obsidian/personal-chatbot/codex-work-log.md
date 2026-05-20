@@ -66,3 +66,8 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Added Motion animations to the launcher, intro bubble, chat window, messages, source buttons, and suggested prompts.
   - Changed suggested prompts toward blog discovery, data notes, project write-ups, events, and subscribing.
   - Kept reduced-motion support for accessibility.
+- Created `AGENTS.md` in the personal chatbot folder as the future startup guide for Codex/agent sessions:
+  - Summarises the Ana assistant persona, implementation paths, indexing workflow, environment variables, behavior rules, test prompts, and work-log habit.
+- Implemented the final Anna chatbot visual direction from the supplied reference:
+  - Updated the launcher bubble, avatar placeholder, chat window header, welcome bubble, prompt rows, message bubbles, and input footer to the soft lavender Anna design.
+  - Renamed visible chatbot persona text from Ana to Anna in the UI, direct API greeting, prompt rules, and AGENTS startup guide.
