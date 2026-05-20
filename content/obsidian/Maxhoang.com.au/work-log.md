@@ -15,6 +15,8 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-20
 
+- Website fixes: redesigned event cards so text no longer overlays photos, filtered GitHub repositories containing `maxhoang`, and made the sidebar push-content action verify refreshed database counts.
+- Website theme upgrade: added warm light/dark colour tokens, Geist typography, a sidebar theme toggle, and Anna chatbot styling tied to semantic tokens.
 - App cleanup: added shared metadata helper, typecheck script, artifact ignore rules, removed two unused legacy components, and removed tracked `.DS_Store` files.
 - Added UI/UX, code cleanup/refactor, blog/content management, SEO/metadata, performance, and accessibility sub-agents for broader website ownership.
 - Added `side-bar-navigation-agent` for website sidebar/navigation ownership and reporting.
