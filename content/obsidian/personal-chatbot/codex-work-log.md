@@ -48,3 +48,7 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Markdown/plain URLs are converted into clickable links.
   - Retrieved sources are shown as compact source buttons under the answer.
   - The chat prompt now avoids raw URLs and separate source text because the UI handles links.
+- Added an animated pre-open introduction bubble for the chatbot:
+  - Introduces the assistant as Ana before the chat window opens.
+  - Uses a lightweight typewriter animation.
+  - Keeps the opened chatbot welcome/header consistent with the Ana assistant persona.
