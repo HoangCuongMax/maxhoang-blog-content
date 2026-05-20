@@ -43,3 +43,8 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
   - Added a small OpenAI chat completion layer after semantic retrieval.
   - Limited context to 3 retrieved chunks and capped output tokens.
   - Added `OPENAI_CHAT_MODEL` and `OPENAI_CHAT_MAX_OUTPUT_TOKENS` environment variable examples.
+- Improved chatbot answer presentation:
+  - Assistant messages now render paragraphs instead of one raw text block.
+  - Markdown/plain URLs are converted into clickable links.
+  - Retrieved sources are shown as compact source buttons under the answer.
+  - The chat prompt now avoids raw URLs and separate source text because the UI handles links.
