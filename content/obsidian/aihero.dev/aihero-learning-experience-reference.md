@@ -544,9 +544,10 @@ By the end of the course, learners will understand how to:
 
 This learning experience can connect to my existing projects and notes:
 
-- [[personal-chatbot-index]]
-- [[personal-portfolio-chatbot-brief]]
-- [[personal-chatbot-build-plan]]
+- [[AGENTS]]
+- [[agent-instruction]]
+- [[memory]]
+- [[work-instruction]]
 
 The personal chatbot project can become one of the first learning paths or project-based tutorials.
 
@@ -610,7 +611,7 @@ When using AIHero as inspiration:
 # Next Steps
 
 - [ ] Define the first course: `Build a Personal Website Chatbot`.
-- [ ] Convert [[personal-chatbot-build-plan]] into lesson pages.
+- [ ] Convert Anna chatbot docs ([[memory]], [[agent-instruction]], [[work-instruction]]) into lesson pages.
 - [ ] Design a course landing page layout.
 - [ ] Design a lesson page layout with sidebar and `Up Next` section.
 - [ ] Create reusable Markdown frontmatter for courses and lessons.
@@ -619,6 +620,7 @@ When using AIHero as inspiration:
 
 ## Related Notes
 
-- [[personal-chatbot-index]]
-- [[personal-portfolio-chatbot-brief]]
-- [[personal-chatbot-build-plan]]
+- [[AGENTS]]
+- [[agent-instruction]]
+- [[memory]]
+- [[work-instruction]]
