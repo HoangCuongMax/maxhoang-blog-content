@@ -38,3 +38,8 @@ Whenever Codex creates, edits, fixes, or reorganises files for this project, the
 - Resolved merge conflict markers in:
   - [[Expert Chatbot Assignment Requirements]]
   - [[Personal Portfolio Website Assistant Chatbot Brief]]
+- Planned and implemented a low-cost answer-generation improvement for the chatbot:
+  - Added direct no-model answers for greetings and contact questions.
+  - Added a small OpenAI chat completion layer after semantic retrieval.
+  - Limited context to 3 retrieved chunks and capped output tokens.
+  - Added `OPENAI_CHAT_MODEL` and `OPENAI_CHAT_MAX_OUTPUT_TOKENS` environment variable examples.
