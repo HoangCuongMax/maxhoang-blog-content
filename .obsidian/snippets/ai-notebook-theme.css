@@ -1,0 +1,419 @@
+/* Professional Notebook Theme for Obsidian */
+/* Cleaner, flatter, less rounded, more document-focused */
+
+:root {
+  --font-interface-theme: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-text-theme: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "SFMono-Regular", monospace;
+
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+
+  --notebook-accent: #8b5cf6;
+  --notebook-border: rgba(255, 255, 255, 0.09);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.theme-dark {
+  --background-primary: #101010;
+  --background-secondary: #151515;
+  --background-secondary-alt: #1b1b1b;
+
+  --text-normal: #e6e6e6;
+  --text-muted: #a3a3a3;
+  --text-faint: #737373;
+
+  --background-modifier-border: rgba(255, 255, 255, 0.08);
+
+  --interactive-accent: #8b5cf6;
+  --interactive-accent-hover: #a78bfa;
+
+  --h1-color: #f2f2f2;
+  --h2-color: #e5e5e5;
+  --h3-color: #d4d4d4;
+
+  --tag-color: #d8b4fe;
+  --tag-background: rgba(139, 92, 246, 0.14);
+  --tag-background-hover: rgba(139, 92, 246, 0.22);
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+.theme-light {
+  --background-primary: #fbfbfb;
+  --background-secondary: #f4f4f5;
+  --background-secondary-alt: #ffffff;
+
+  --text-normal: #202124;
+  --text-muted: #60646c;
+  --text-faint: #8b8d93;
+
+  --background-modifier-border: rgba(0, 0, 0, 0.09);
+
+  --interactive-accent: #6d28d9;
+  --interactive-accent-hover: #5b21b6;
+
+  --h1-color: #111111;
+  --h2-color: #222222;
+  --h3-color: #333333;
+
+  --tag-color: #5b21b6;
+  --tag-background: rgba(109, 40, 217, 0.1);
+  --tag-background-hover: rgba(109, 40, 217, 0.16);
+}
+
+/* =========================
+   MAIN DOCUMENT AREA
+========================= */
+
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  line-height: 1.72;
+  font-size: 16px;
+}
+
+/* Reduce empty wide feeling */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.markdown-preview-view.is-readable-line-width {
+  max-width: 780px;
+}
+
+/* Page title */
+.inline-title {
+  font-size: 2.1rem;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  margin-bottom: 28px;
+  color: var(--h1-color);
+}
+
+/* =========================
+   PROPERTIES BOX
+========================= */
+
+.metadata-container {
+  background: transparent;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 52px;
+  box-shadow: none;
+}
+
+.metadata-container .metadata-properties-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.metadata-property {
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.metadata-property:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.metadata-property-key {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.metadata-property-value {
+  color: var(--text-normal);
+}
+
+/* Make property input less rounded */
+.metadata-input-longtext,
+.metadata-input-text,
+.metadata-input-number {
+  border-radius: 4px !important;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.markdown-preview-view h1,
+.cm-header-1 {
+  font-size: 1.95rem;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  margin-top: 46px;
+  margin-bottom: 16px;
+  color: var(--h1-color);
+}
+
+.markdown-preview-view h2,
+.cm-header-2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 38px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--h2-color);
+}
+
+.markdown-preview-view h3,
+.cm-header-3 {
+  font-size: 1.08rem;
+  font-weight: 680;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: var(--h3-color);
+}
+
+.markdown-preview-view h4,
+.cm-header-4 {
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text-muted);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.markdown-preview-view p {
+  margin-bottom: 16px;
+}
+
+.markdown-preview-view strong,
+.cm-strong {
+  font-weight: 700;
+}
+
+.markdown-preview-view em,
+.cm-em {
+  color: var(--text-muted);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.markdown-preview-view a,
+.cm-hmd-internal-link,
+.cm-link {
+  color: var(--interactive-accent);
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.markdown-preview-view a:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tag {
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 0.78rem;
+  font-weight: 550;
+  text-decoration: none;
+  border: 1px solid rgba(139, 92, 246, 0.18);
+}
+
+/* =========================
+   CODE
+========================= */
+
+.markdown-preview-view code,
+.cm-inline-code {
+  font-family: var(--font-monospace-theme);
+  background: var(--background-secondary-alt);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 0.88em;
+}
+
+.markdown-preview-view pre,
+.HyperMD-codeblock {
+  background: var(--background-secondary-alt);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.markdown-preview-view pre code {
+  border: none;
+  background: transparent;
+}
+
+/* =========================
+   BLOCKQUOTES / CALLOUT FEEL
+========================= */
+
+.markdown-preview-view blockquote {
+  border-left: 3px solid var(--interactive-accent);
+  background: transparent;
+  padding: 6px 0 6px 16px;
+  margin: 22px 0;
+  color: var(--text-muted);
+}
+
+/* Obsidian callouts */
+.callout {
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: none;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.markdown-preview-view table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 0;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.markdown-preview-view th {
+  background: var(--background-secondary);
+  font-weight: 650;
+  color: var(--text-normal);
+}
+
+.markdown-preview-view td,
+.markdown-preview-view th {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* =========================
+   CHECKBOXES
+========================= */
+
+input[type="checkbox"] {
+  accent-color: var(--interactive-accent);
+}
+
+/* =========================
+   SIDEBAR / FILE EXPLORER
+========================= */
+
+.workspace-leaf-content[data-type="file-explorer"] {
+  font-size: 0.92rem;
+}
+
+.nav-folder-title,
+.nav-file-title {
+  border-radius: 4px;
+  margin: 1px 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-file-title.is-active {
+  background: rgba(139, 92, 246, 0.22);
+  color: #d8b4fe;
+  font-weight: 650;
+}
+
+.theme-light .nav-file-title.is-active {
+  color: #5b21b6;
+  background: rgba(109, 40, 217, 0.12);
+}
+
+/* Reduce folder tree visual noise */
+.nav-folder-collapse-indicator {
+  opacity: 0.55;
+}
+
+.tree-item-self {
+  border-radius: 4px;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.workspace-tab-header {
+  border-radius: 4px 4px 0 0;
+}
+
+.workspace-tab-header.is-active {
+  background: var(--background-secondary);
+  box-shadow: none;
+}
+
+.workspace-tab-header-inner-title {
+  font-weight: 550;
+}
+
+/* =========================
+   SIDE PANES
+========================= */
+
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  border-color: var(--background-modifier-border);
+}
+
+.workspace-leaf {
+  background: var(--background-primary);
+}
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.status-bar {
+  background: var(--background-primary);
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.26);
+}
