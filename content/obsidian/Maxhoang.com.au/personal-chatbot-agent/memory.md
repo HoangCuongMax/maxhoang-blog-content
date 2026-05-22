@@ -45,7 +45,7 @@ Published Markdown (maxhoang-blog-content/content)
   -> JsonRetriever (cosine semantic search)
   -> POST /api/chat
   -> OpenAI chat completion (grounded)
-  -> Anna UI (messages + source controls)
+  -> Anna UI (message stream + compact footer actions)
 ```
 
 ## Indexer content categories (high level)
@@ -65,8 +65,8 @@ Exclusions follow **site publishing rules** (draft / private / unpublished must 
 |------|------|
 | Launcher + intro bubble + window switch | `components/chatbot/ChatbotWidget.tsx` |
 | Floating open control (if used) | `components/chatbot/ChatbotButton.tsx` |
-| Chat shell, messages, quick prompts | `components/chatbot/ChatbotWindow.tsx` |
-| Message bubbles + sources | `components/chatbot/ChatMessage.tsx` |
+| Chat shell, messages, quick prompts, footer actions, desktop sidebar layout | `components/chatbot/ChatbotWindow.tsx` |
+| Message bubbles and admin panel rendering | `components/chatbot/ChatMessage.tsx` |
 | Input | `components/chatbot/ChatInput.tsx` |
 | Avatar | `components/chatbot/AnnaAvatar.tsx` |
 | API | `app/api/chat/route.ts` |
@@ -83,6 +83,15 @@ Exclusions follow **site publishing rules** (draft / private / unpublished must 
 > The chat layer must **not** care whether chunks live in **JSON**, **Supabase**, or another store. It only talks to a **Retriever** implementation.
 
 Today: **local JSON embeddings file** + `JsonRetriever`. Later: optional **Supabase / pgvector** or **CI indexing** without rewriting the whole UI or route contract.
+
+## UI behaviour (current)
+
+- The chat scroll area should stay focused on conversation messages only.
+- Latest `Sources`, `Continue` suggestions, and contextual `Feedback` live in a compact footer action area above the input.
+- Sources are collapsed behind a `Sources` button and expand in the footer action area.
+- Feedback appears after roughly every third saved assistant answer, hides after a rating/correction, and also hides when the visitor continues without rating.
+- On desktop, the open chatbot is a left-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
+- Anna uses warmer identity copy, rotating status text, conversational suggested questions, and a stronger assistant/researcher/collaborator personality layer.
 
 ## Environment (names only; values in `.env`)
 
@@ -101,6 +110,7 @@ Never commit real keys. Site content pull from GitHub uses separate vault vars (
 ## Changelog (high level)
 
 - **v2:** Semantic RAG with local `chatbot-embeddings.json`, `/api/chat`, grounded completions, source UI.
+- **v2 UI refinement:** Clean message stream with footer-based Sources/Continue/Feedback controls and a desktop left overlay sidebar.
 - **Product:** Anna reframed as **journal / audience** assistant; Motion + reduced-motion; direct answers for greeting/contact only.
 
 For **dated implementation steps**, see **`work-log.md`**.

@@ -64,6 +64,49 @@ The content source is the **maxhoang-blog-content** repo:
 - For content-only changes, check frontmatter and publishing rules before regenerating embeddings.
 - After content or indexing changes, run `npm run index-chatbot-content` from `MaxHoang_Notion` when Node tooling is available.
 
-**Reporting rule:** append dated one-liners to **`work-log.md`** when you change chatbot code, content, or this folder. Add a short parent entry to `../work-log.md` when chatbot work changes website behaviour, app implementation, workflow, or agent structure.
+## Current UI and personality improvement plan
+
+Anna's current implementation should preserve this product direction:
+
+- Keep the chat stream clean: the scroll area should show only user and assistant messages.
+- Move `Sources`, `Continue`, and `Feedback` into one compact footer action area above the input.
+- Collapse `Sources` behind a button in the footer action area, with an option to expand and show source links.
+- Move `Continue` suggestions into the same footer action area so suggested next steps do not consume message space.
+- Keep the current feedback visual style, but show it contextually instead of all the time. Show it after roughly 3 to 5 assistant answers, hide it after a rating/correction, and hide it when the user continues without rating.
+- On desktop, make the open chatbot a left-side overlay sidebar that sticks to the left edge and uses the full viewport height. Keep mobile behaviour compact/fullscreen as appropriate.
+- Make Anna feel like a real digital assistant, not a website search widget. She should be warm, observant, curious, slightly playful, confident, proactive, and calm.
+- Position Anna as a smart studio assistant, portfolio guide, research assistant, and creative AI collaborator.
+- Replace software-like identity copy such as "Professional guide to posts, notes..." with warmer positioning such as "Your guide through Max's AI lab, projects, notes, and experiments" or "Part assistant, part researcher, part creative collaborator."
+- Rotate natural welcome messages instead of repeating one robotic greeting. Examples: "Hey, I'm Anna. I can help you explore Max's AI projects, experiments, blog posts, and ideas. What are you curious about?" and "Looking for a project, blog post, or AI experiment? I probably know where it is."
+- Add human behaviours: acknowledge, react, guide, suggest, remember session context, and continue conversations naturally.
+- Make Anna proactive. If a visitor asks for a website, service, project, or career context, Anna should ask a useful follow-up and offer relevant paths through Max's work.
+- Use small emotional cues where appropriate: "I found something useful", "This one might interest you", "That project is actually pretty interesting", "Max is actively improving this one."
+- Use session memory to adapt to visitor type when possible: recruiter, client, student, developer, collaborator, or general visitor.
+- Improve suggested questions so they feel conversational: "Show me AI projects", "What services does Max offer?", "Can Max build custom AI chatbots?", "What is he currently studying?", "Show award-winning projects", "Find beginner AI blogs", "Explain his WebGIS framework."
+- Add tasteful thinking/status behaviour: "Let me think...", "Searching Max's notes...", "I found a few relevant things", "Comparing projects..." and rotating status labels like "online", "reading notes", "thinking", "exploring projects", "building ideas", "available now."
+- Consider conversation modes for visitor intent: recruiter mode, client mode, student mode, and developer mode.
+- Avoid search-like wording. Prefer "I found a few things that match what you're looking for" over "Here are 3 blog posts"; prefer "I couldn't find an exact match, but these might help" over "No results found"; prefer "Could you tell me a little more about what you mean?" over "Please clarify."
+
+Implementation priority:
+
+1. Move `Sources`, `Continue`, and `Feedback` into the bottom action area.
+2. Update visible copy, welcome messages, status text, and suggested questions.
+3. Strengthen the system prompt and answer rules for personality, proactive guidance, and non-search wording.
+4. Add session visitor-mode detection and adaptive follow-up behaviour.
+5. Add subtle liveliness polish such as typing animation, blinking cursor, live status changes, avatar movement, hover reactions, and dynamic background glow while respecting reduced motion.
+
+## Documentation sync rule
+
+Any meaningful chatbot change must update the relevant files in this `personal-chatbot-agent` folder during the same work session:
+
+- Update **`AGENTS.md`** when routing, entry points, file maps, current product direction, or cross-file rules change.
+- Update **`agent-instruction.md`** when Anna's persona, tone, behaviour, safety rules, conversation modes, or quality bar changes.
+- Update **`chatbot-answer-rules.md`** when answer style, fallback wording, grounding rules, proactive guidance, or system-prompt behaviour changes.
+- Update **`memory.md`** when app paths, architecture, data flow, implementation details, environment assumptions, or stable facts change.
+- Update **`work-instruction.md`** when commands, verification steps, workflow, indexing, deployment, or logging rules change.
+- Update **`work-log.md`** with a dated one-liner whenever chatbot code, content, docs, behaviour, UI, or workflow changes.
+- Add a short parent entry to **`../work-log.md`** when chatbot work changes website behaviour, app implementation, workflow, or agent structure.
+
+Do not leave the agent docs stale after editing chatbot code. Before finishing, scan this folder and update every file whose instructions, memory, or workflow are affected by the change.
 
 This folder lives under the content vault: `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent`. The runnable app is **not** here; it is in the **MaxHoang_Notion** Next.js repo (see `memory.md`).

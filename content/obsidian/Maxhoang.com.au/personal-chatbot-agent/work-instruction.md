@@ -68,13 +68,16 @@ Whenever you (or an agent) **ship a meaningful change** to the chatbot or this d
 
 Do not paste secrets or full API keys into the log.
 
-## 6. Updating these three pillars
+## 6. Documentation sync
 
 - **`agent-instruction.md`** — persona, rules, tests, safety. Update when product behaviour changes.
+- **`chatbot-answer-rules.md`** — answer style, fallback wording, grounding details, proactive guidance, and system-prompt behaviour. Update when Anna's conversation style changes.
 - **`memory.md`** — repos, paths, pipeline, file map, architecture. Update when implementation or locations change.
 - **`work-instruction.md`** — commands, Git, checklists. Update when workflow or tooling changes.
+- **`AGENTS.md`** — router, entry points, file maps, current product direction, and cross-file rules. Update when future agents need different starting context.
+- **`work-log.md`** — dated one-liners. Update whenever chatbot code, content, docs, behaviour, UI, or workflow changes.
 
-Keep **`AGENTS.md`** as the short router; only extend it if the **read order** or **entry points** change.
+Before finishing a chatbot change, scan this folder and update every affected file. Do not leave agent docs stale after editing chatbot code.
 
 ## 7. Obsidian / publishing note
 

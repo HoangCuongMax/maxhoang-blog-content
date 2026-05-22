@@ -13,8 +13,13 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-23
+
+- Chatbot UI/personality: moved Sources/Continue/Feedback into Anna's footer action area, switched desktop open chat to a full-height left overlay sidebar, refreshed conversational copy and suggestions, and updated chatbot agent docs.
+
 ## 2026-05-22
 
+- Chatbot agent docs: added Anna's next UI/personality improvement plan and strengthened the rule that future chatbot changes must update affected agent docs in the same work session.
 - Chatbot conversation UX: changed Anna's answer display into staged conversational turns, moved feedback to a compact bottom panel after multiple answers, added recent session history for follow-up context, and added chat commands for theme switching and website page navigation.
 - Chatbot admin: moved Push content, Update tokenization, and System theme controls into Anna behind an `I am Max` password-gated Admin Assistant flow.
 - Chatbot UI: compacted answer cards with collapsible long answers, clearer Sources/Continue/Feedback sections, and fixed mobile fullscreen keyboard/zoom overflow behaviour.

@@ -13,8 +13,13 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-23
+
+- Implemented the Anna UI/personality plan: moved Sources/Continue/Feedback into a compact footer action area, made desktop chat open as a full-height left overlay sidebar, refreshed welcome/status/suggestion copy, strengthened the system prompt, and synced affected chatbot agent docs.
+
 ## 2026-05-22
 
+- Updated Anna's `AGENTS.md` with the next UI/personality improvement plan and a stronger documentation sync rule requiring affected chatbot agent files to be updated whenever chatbot behaviour, UI, workflow, or implementation changes.
 - Made Anna's answer flow more conversational by splitting API responses into staged chat turns: acknowledgement, answer, source summary, and follow-up suggestions; moved answer feedback to a compact bottom panel that appears after multiple saved answers; added chat commands for theme switching/page navigation and passed recent session history into answer generation for follow-up context.
 - Moved admin actions from the public sidebar into Anna's chat behind an `I am Max` admin flow with password prompt, masked password transcript, in-chat Admin Assistant panel, and password-protected admin action endpoints.
 - Improved Anna answer display and mobile fullscreen input behaviour: long answers collapse behind `Show more`, answer sections are labelled, source/suggestion buttons are visually distinct, and the expanded mobile chat locks horizontal overflow and avoids iOS input zoom.
