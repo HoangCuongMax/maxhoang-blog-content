@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Chatbot retrieval: added live published-content fallback search, deduped repeated source buttons, added answer follow-up suggestions, and exposed a manual `Update tokenization` sidebar action.
 - Chatbot UI/indexing: added Anna's full ImageKit image to the chat background and made the chatbot indexer report tokenized published document counts, including Obsidian notes.
 - Main agent docs: expanded root `AGENTS.md` with the website app code structure, content structure, and routing guidance for sub-agent work.
 - Chatbot agent docs: expanded Anna's `AGENTS.md` with the website app code structure, content structure, and chatbot change checklist.
