@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Made Anna's answer flow more conversational by splitting API responses into staged chat turns: acknowledgement, answer, source summary, and follow-up suggestions; moved answer feedback to a compact bottom panel that appears after multiple saved answers; added chat commands for theme switching/page navigation and passed recent session history into answer generation for follow-up context.
 - Moved admin actions from the public sidebar into Anna's chat behind an `I am Max` admin flow with password prompt, masked password transcript, in-chat Admin Assistant panel, and password-protected admin action endpoints.
 - Improved Anna answer display and mobile fullscreen input behaviour: long answers collapse behind `Show more`, answer sections are labelled, source/suggestion buttons are visually distinct, and the expanded mobile chat locks horizontal overflow and avoids iOS input zoom.
 - Added a chatbot expand/collapse control so Anna can open as a fullscreen chat app on mobile and a large near-fullscreen panel on desktop.

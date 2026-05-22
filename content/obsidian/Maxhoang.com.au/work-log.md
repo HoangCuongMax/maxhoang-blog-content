@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Chatbot conversation UX: changed Anna's answer display into staged conversational turns, moved feedback to a compact bottom panel after multiple answers, added recent session history for follow-up context, and added chat commands for theme switching and website page navigation.
 - Chatbot admin: moved Push content, Update tokenization, and System theme controls into Anna behind an `I am Max` password-gated Admin Assistant flow.
 - Chatbot UI: compacted answer cards with collapsible long answers, clearer Sources/Continue/Feedback sections, and fixed mobile fullscreen keyboard/zoom overflow behaviour.
 - Chatbot UI: added an expand/collapse control for fullscreen mobile chat and a large desktop chat panel.
