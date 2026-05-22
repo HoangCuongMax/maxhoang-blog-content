@@ -18,8 +18,8 @@ tags:
 
 ## Stable paths
 
-- Website app: `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
-- Content vault: `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
+- Website app: `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
+- Content vault: `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - Cover agent folder: `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/cover-photo-generate-agent`
 - Blog posts: `maxhoang-blog-content/content/posts`
 - Planned generated covers: `MaxHoang_Notion/public/blog-covers`

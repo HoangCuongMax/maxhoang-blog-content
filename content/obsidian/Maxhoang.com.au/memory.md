@@ -22,9 +22,9 @@ Use this note for stable facts: repos, paths, architecture, content model, and s
 
 ## Local paths
 
-- **Workspace root:** `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog`
-- **Website app:** `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
-- **Content vault:** `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
+- **Workspace root:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog`
+- **Website app:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
+- **Content vault:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - **Website agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au`
 
 ## High-level architecture

@@ -26,8 +26,8 @@ GitHub web: [MaxHoang_Notion](https://github.com/HoangCuongMax/MaxHoang_Notion) 
 
 Adjust if your clone location differs.
 
-- **App:** `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
-- **Content vault:** `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
+- **App:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
+- **Content vault:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - **Website agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au`
 - **This sub-agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent`
 

@@ -18,7 +18,7 @@ tags:
 
 ## Stable paths
 
-- Website app: `/Users/hoangcuong/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
+- Website app: `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
 - Motion agent folder: `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/motion-effect-agent`
 
 ## Known implementation

@@ -13,6 +13,13 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-22
+
+- Main agent docs: expanded root `AGENTS.md` with the website app code structure, content structure, and routing guidance for sub-agent work.
+- Chatbot agent docs: expanded Anna's `AGENTS.md` with the website app code structure, content structure, and chatbot change checklist.
+- Chatbot behaviour: updated Anna's live system prompt and small UI/API copy so the website reflects the new `chatbot-answer-rules.md` guidance.
+- Published the Common NLP Questions and Answers note as a blog post and prepared it for chatbot content indexing through the website tokenization/indexing script.
+
 ## 2026-05-20
 
 - Website fixes: redesigned event cards so text no longer overlays photos, filtered GitHub repositories containing `maxhoang`, and made the sidebar push-content action verify refreshed database counts.
