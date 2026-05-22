@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Chatbot UI: compacted answer cards with collapsible long answers, clearer Sources/Continue/Feedback sections, and fixed mobile fullscreen keyboard/zoom overflow behaviour.
 - Chatbot UI: added an expand/collapse control for fullscreen mobile chat and a large desktop chat panel.
 - Chatbot retrieval: added live published-content fallback search, deduped repeated source buttons, added answer follow-up suggestions, and exposed a manual `Update tokenization` sidebar action.
 - Chatbot UI/indexing: added Anna's full ImageKit image to the chat background and made the chatbot indexer report tokenized published document counts, including Obsidian notes.
