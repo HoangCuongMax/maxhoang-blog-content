@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Added a chatbot expand/collapse control so Anna can open as a fullscreen chat app on mobile and a large near-fullscreen panel on desktop.
 - Fixed chatbot retrieval UX by deduplicating repeated source buttons, adding follow-up suggestion chips under answers, adding a live published-content retriever for stale embedding coverage, and adding a sidebar `Update tokenization` action backed by `/api/chatbot-index`.
 - Added Anna's full ImageKit image as the chatbot surface background and updated the chatbot indexer to report tokenized published document counts per content folder; embedding regeneration was blocked locally because `npm`/Node is unavailable in this shell.
 - Expanded `AGENTS.md` with a website code structure map, content structure map, and chatbot change checklist so future Anna sessions know where to inspect app code.
