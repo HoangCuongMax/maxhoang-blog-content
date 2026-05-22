@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-22
 
+- Added Anna's full ImageKit image as the chatbot surface background and updated the chatbot indexer to report tokenized published document counts per content folder; embedding regeneration was blocked locally because `npm`/Node is unavailable in this shell.
 - Expanded `AGENTS.md` with a website code structure map, content structure map, and chatbot change checklist so future Anna sessions know where to inspect app code.
 - Wired `chatbot-answer-rules.md` into the live chatbot system prompt in `MaxHoang_Notion/lib/chatbot/chat-completion.ts`, refreshed fallback/greeting copy in `/api/chat`, and softened the UI intent acknowledgement.
 - Added human conversation rules to `chatbot-answer-rules.md`, including acknowledgement, mixed initiative, clarification questions, side-question handling, and careful same-session memory.
