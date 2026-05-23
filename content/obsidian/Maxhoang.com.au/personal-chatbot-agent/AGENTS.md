@@ -96,6 +96,10 @@ Anna's current implementation should preserve this product direction:
 - Add tasteful thinking/status behaviour: "Let me think...", "Searching Max's notes...", "I found a few relevant things", "Comparing projects..." and rotating status labels like "online", "reading notes", "thinking", "exploring projects", "building ideas", "available now."
 - Consider conversation modes for visitor intent: recruiter mode, client mode, student mode, and developer mode.
 - Avoid search-like wording. Prefer "I found a few things that match what you're looking for" over "Here are 3 blog posts"; prefer "I couldn't find an exact match, but these might help" over "No results found"; prefer "Could you tell me a little more about what you mean?" over "Please clarify."
+- Do not let Anna introduce herself repeatedly after the first welcome unless the visitor asks who she is.
+- Answer greetings, identity questions, and basic help questions directly before retrieval.
+- Only show search/thinking prefaces when Anna is actually searching Max's content.
+- In minimized mode, the pencil opens an inline quick-chat input instead of the full chatbot. Mini answers should be short, direct, and invite full chat for sources/details.
 
 Implementation priority:
 

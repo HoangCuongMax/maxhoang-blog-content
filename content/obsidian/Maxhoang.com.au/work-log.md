@@ -15,6 +15,8 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
+- Chatbot minimized UX: added pencil-triggered inline quick chat with short mini answers and an option to open full chat for sources/details.
+- Chatbot UX: added first-open welcome/onboarding behaviour and anti-repetition conversation rules so Anna answers greetings, identity, and help questions directly before retrieval.
 - Chatbot UI: moved Anna's desktop full-height overlay sidebar to the right edge and updated chatbot agent docs.
 - Chatbot implementation: added markdown-brain v1 with approved personality/relationship/training files, app runtime loading, memory-layer-aware indexing, and factual-source filtering so Anna can use personality memory without exposing it as sources.
 - Chatbot agent docs: added the proposed `markdown-brain` structure and human-reviewed learning workflow so Anna records conversations but only Max approves memory updates.

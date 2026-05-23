@@ -15,6 +15,8 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
+- Added minimized quick-chat UX: pencil toggles an inline input under the intro bubble, mini answers stay short/direct through `/api/chat` `mode: "mini"`, and full chat remains available for sources/details.
+- Added Anna's first-open welcome flow plan to implementation: optional visitor name, optional newsletter signup, hidden input until start/skip, and anti-repetition/direct-answer conversation rules for greetings, identity, and help questions.
 - Moved Anna's desktop overlay placement to the right edge while keeping the full-height sidebar behaviour, and updated the agent docs to match.
 - Implemented markdown-brain v1: created approved root `markdown-brain/` memory files, added runtime personality-memory loading, updated the indexer for `memoryLayer` chunks, filtered factual sources away from personality memory, and kept learning human-approved.
 - Added `markdown-brain-structure.md` to the Anna brain architecture plan with the proposed content/personality/memory/training folder structure, chatbot retrieval flow, and human-reviewed learning loop where only Max approves memory updates.

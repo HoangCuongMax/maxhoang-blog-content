@@ -88,11 +88,14 @@ Today: **local JSON embeddings file** + `JsonRetriever`. Later: optional **Supab
 ## UI behaviour (current)
 
 - The chat scroll area should stay focused on conversation messages only.
+- First open uses a pre-chat welcome flow with optional name capture and optional newsletter signup before the normal chat input appears.
 - Latest `Sources`, `Continue` suggestions, and contextual `Feedback` live in a compact footer action area above the input.
 - Sources are collapsed behind a `Sources` button and expand in the footer action area.
 - Feedback appears after roughly every third saved assistant answer, hides after a rating/correction, and also hides when the visitor continues without rating.
 - On desktop, the open chatbot is a right-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
 - Anna uses warmer identity copy, rotating status text, conversational suggested questions, and a stronger assistant/researcher/collaborator personality layer.
+- General chat, greetings, identity questions, and capability questions are handled directly before retrieval so Anna does not search the site for "Who are you?"
+- Minimized widget supports a pencil-triggered inline quick-chat input. It calls `/api/chat` with `mode: "mini"` and shows short 1-2 sentence answers without opening the full chatbot.
 
 ## Environment (names only; values in `.env`)
 
