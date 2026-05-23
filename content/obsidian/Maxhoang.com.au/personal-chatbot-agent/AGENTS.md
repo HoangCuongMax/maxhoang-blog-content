@@ -20,6 +20,10 @@ tags:
 3. **`memory.md`** - Repos, paths, architecture, pipeline, and stable facts about the implementation.
 4. **`work-instruction.md`** - Commands, env, Git workflow, indexing, verification, and how to log work.
 
+For Anna's long-term personality system and memory architecture, also read:
+
+5. **`anna-brain-architecture/README.md`** - Digital personality system plan, memory layers, and implementation roadmap entry points.
+
 ## Website code structure to know
 
 The runnable website app is the **MaxHoang_Notion** Next.js repo, not this Obsidian folder. For chatbot work, assume this app structure:
@@ -55,12 +59,18 @@ The content source is the **maxhoang-blog-content** repo:
 | Obsidian notes | `maxhoang-blog-content/content/obsidian/` | Notes and internal docs; only published/public material should be indexed. |
 | Website agent docs | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/` | Website-wide agent instructions, memory, workflow, and work log. |
 | Chatbot agent docs | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent/` | Anna-specific instructions, answer rules, workflow, memory, and work log. |
+| Anna brain architecture | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent/anna-brain-architecture/` | Personality bible, conversation dictionary, dialogue examples, mood states, and future memory architecture plan. |
+| Markdown brain plan | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent/anna-brain-architecture/markdown-brain-structure.md` | Proposed content/personality/memory/training folder structure and human-reviewed learning loop. |
+| Active markdown brain | `maxhoang-blog-content/markdown-brain/` | Approved Anna brain files used by runtime personality loading and future embedding retrieval. |
 
 ## Chatbot change checklist
 
 - For answer behaviour, check `chatbot-answer-rules.md`, then update `MaxHoang_Notion/lib/chatbot/chat-completion.ts` or `MaxHoang_Notion/app/api/chat/route.ts`.
 - For retrieval or content coverage, check `scripts/index-chatbot-content.mjs`, `lib/chatbot/retrievers/json-retriever.ts`, and `data/chatbot-embeddings.json`.
 - For visible chatbot experience, check `components/chatbot/*` and `app/globals.css`.
+- For personality memory, relationship memory, mood states, or future Anna brain architecture, check `anna-brain-architecture/*` as well as `agent-instruction.md` and `chatbot-answer-rules.md`.
+- For active Anna brain content, edit `maxhoang-blog-content/markdown-brain/*`, then update docs/logs and regenerate embeddings when Node/OpenAI tooling is available.
+- For learning or memory updates, preserve the rule: Anna can record conversation logs automatically, but only Max can approve changes to Anna's Markdown memory.
 - For content-only changes, check frontmatter and publishing rules before regenerating embeddings.
 - After content or indexing changes, run `npm run index-chatbot-content` from `MaxHoang_Notion` when Node tooling is available.
 
@@ -73,7 +83,7 @@ Anna's current implementation should preserve this product direction:
 - Collapse `Sources` behind a button in the footer action area, with an option to expand and show source links.
 - Move `Continue` suggestions into the same footer action area so suggested next steps do not consume message space.
 - Keep the current feedback visual style, but show it contextually instead of all the time. Show it after roughly 3 to 5 assistant answers, hide it after a rating/correction, and hide it when the user continues without rating.
-- On desktop, make the open chatbot a left-side overlay sidebar that sticks to the left edge and uses the full viewport height. Keep mobile behaviour compact/fullscreen as appropriate.
+- On desktop, make the open chatbot a right-side overlay sidebar that sticks to the right edge and uses the full viewport height. Keep mobile behaviour compact/fullscreen as appropriate.
 - Make Anna feel like a real digital assistant, not a website search widget. She should be warm, observant, curious, slightly playful, confident, proactive, and calm.
 - Position Anna as a smart studio assistant, portfolio guide, research assistant, and creative AI collaborator.
 - Replace software-like identity copy such as "Professional guide to posts, notes..." with warmer positioning such as "Your guide through Max's AI lab, projects, notes, and experiments" or "Part assistant, part researcher, part creative collaborator."

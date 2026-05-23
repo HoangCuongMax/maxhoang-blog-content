@@ -30,6 +30,7 @@ Adjust if your clone location differs.
 - **Content vault:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - **Website agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au`
 - **This sub-agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent`
+- **Anna brain architecture folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent/anna-brain-architecture`
 
 ## Parent agent
 
@@ -90,7 +91,7 @@ Today: **local JSON embeddings file** + `JsonRetriever`. Later: optional **Supab
 - Latest `Sources`, `Continue` suggestions, and contextual `Feedback` live in a compact footer action area above the input.
 - Sources are collapsed behind a `Sources` button and expand in the footer action area.
 - Feedback appears after roughly every third saved assistant answer, hides after a rating/correction, and also hides when the visitor continues without rating.
-- On desktop, the open chatbot is a left-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
+- On desktop, the open chatbot is a right-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
 - Anna uses warmer identity copy, rotating status text, conversational suggested questions, and a stronger assistant/researcher/collaborator personality layer.
 
 ## Environment (names only; values in `.env`)
@@ -107,10 +108,34 @@ Never commit real keys. Site content pull from GitHub uses separate vault vars (
 3. **GitHub Action:** on content repo changes, regenerate `chatbot-embeddings.json` and commit or artifact.
 4. **Supabase:** move vectors to DB; same retriever pattern, different backend.
 
+## Future Anna brain architecture
+
+The `anna-brain-architecture/` folder captures the planned shift from chatbot UI to digital personality system.
+
+The target design has three memory layers:
+
+- **Knowledge memory:** factual website content such as posts, projects, notes, awards, services, events, and FAQs.
+- **Personality memory:** Anna's identity, speech style, behaviour rules, emotional patterns, mood states, and dialogue examples.
+- **Relationship memory:** session and future long-term context about visitor intent, interests, preferred depth, and visitor type.
+
+Long term, personality docs and dialogue examples can be embedded alongside factual content with metadata such as `memory_layer: personality`, then retrieved before response generation. Keep this separate from factual claims about Max.
+
+Recommended structure is documented in `anna-brain-architecture/markdown-brain-structure.md` and now exists at the content repo root: `maxhoang-blog-content/markdown-brain/`.
+
+Current app support:
+
+- `MaxHoang_Notion/lib/chatbot/personality-memory.ts` loads approved markdown-brain personality, relationship, and training notes at runtime when available.
+- `MaxHoang_Notion/scripts/index-chatbot-content.mjs` indexes `markdown-brain` docs with `memoryLayer` metadata for future embedding retrieval.
+- `MaxHoang_Notion/app/api/chat/route.ts` filters factual sources to `memoryLayer: knowledge` while passing personality/relationship/training context to the model separately.
+
+The key learning rule remains: Anna can record conversations automatically, but only Max can approve changes to Anna's Markdown memory. Approved memory should then be embedded and used in future retrieval.
+
 ## Changelog (high level)
 
 - **v2:** Semantic RAG with local `chatbot-embeddings.json`, `/api/chat`, grounded completions, source UI.
-- **v2 UI refinement:** Clean message stream with footer-based Sources/Continue/Feedback controls and a desktop left overlay sidebar.
+- **v2 UI refinement:** Clean message stream with footer-based Sources/Continue/Feedback controls and a desktop right overlay sidebar.
 - **Product:** Anna reframed as **journal / audience** assistant; Motion + reduced-motion; direct answers for greeting/contact only.
+- **Architecture planning:** Added Anna brain architecture docs for knowledge memory, personality memory, relationship memory, mood states, dialogue examples, and future personality retrieval.
+- **Markdown brain v1:** Added root `markdown-brain/` approved memory files plus app support for runtime personality memory loading and memory-layer-aware indexing.
 
 For **dated implementation steps**, see **`work-log.md`**.

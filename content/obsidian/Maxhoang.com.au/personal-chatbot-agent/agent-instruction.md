@@ -75,7 +75,7 @@ The indexer should only include **published / public** material aligned with the
 - **Embeddings** live in the embedder and/or indexing script.
 - **System / completion rules** live in the chat-completion helper.
 - **Footer action UI:** sources, continue suggestions, and feedback belong in the compact footer action area above the input, not inside assistant message cards.
-- **Desktop window layout:** the open chatbot should behave like a left-side overlay sidebar using the full viewport height.
+- **Desktop window layout:** the open chatbot should behave like a right-side overlay sidebar using the full viewport height.
 - **Secrets:** server-side only; never expose API keys to the client.
 - **Accessibility:** respect **reduced motion** when changing animations.
 

@@ -15,7 +15,11 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
-- Chatbot UI/personality: moved Sources/Continue/Feedback into Anna's footer action area, switched desktop open chat to a full-height left overlay sidebar, refreshed conversational copy and suggestions, and updated chatbot agent docs.
+- Chatbot UI: moved Anna's desktop full-height overlay sidebar to the right edge and updated chatbot agent docs.
+- Chatbot implementation: added markdown-brain v1 with approved personality/relationship/training files, app runtime loading, memory-layer-aware indexing, and factual-source filtering so Anna can use personality memory without exposing it as sources.
+- Chatbot agent docs: added the proposed `markdown-brain` structure and human-reviewed learning workflow so Anna records conversations but only Max approves memory updates.
+- Chatbot agent docs: created Anna brain architecture folder for the future digital personality system, including knowledge/personality/relationship memory layers, personality bible, dialogue examples, mood states, and implementation roadmap.
+- Chatbot UI/personality: moved Sources/Continue/Feedback into Anna's footer action area, switched desktop open chat to a full-height right overlay sidebar, refreshed conversational copy and suggestions, and updated chatbot agent docs.
 
 ## 2026-05-22
 

@@ -17,6 +17,7 @@ Use this note when **developing**, **debugging**, **shipping**, or **updating em
 
 - **Application code:** clone / open **`MaxHoang_Notion`** (see `memory.md` for path).
 - **Markdown content:** **`maxhoang-blog-content`** repo, under `content/`.
+- **Anna markdown brain:** **`maxhoang-blog-content/markdown-brain`** for approved personality, relationship, and training memory.
 - **Website agent docs:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au`
 - **Chatbot agent docs (this folder):** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/personal-chatbot-agent` — edit when chatbot behaviour or workflow changes.
 
@@ -53,6 +54,7 @@ Do **not** commit `.env` files with real secrets.
 
 - [ ] `OPENAI_API_KEY` set locally for full RAG test (optional for pure UI tweaks).
 - [ ] `npm run index-chatbot-content` if content or indexer changed.
+- [ ] `npm run index-chatbot-content` if approved `markdown-brain` files changed and should be embedded.
 - [ ] `npm run lint` clean.
 - [ ] `npm run build` succeeds.
 - [ ] Spot-check prompts from **`agent-instruction.md`** (greeting, domain question, out-of-scope).
