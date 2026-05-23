@@ -99,7 +99,7 @@ Anna's current implementation should preserve this product direction:
 - Do not let Anna introduce herself repeatedly after the first welcome unless the visitor asks who she is.
 - Answer greetings, identity questions, and basic help questions directly before retrieval.
 - Only show search/thinking prefaces when Anna is actually searching Max's content.
-- In minimized mode, hovering or focusing the message bubble reveals an inline quick-chat input instead of opening the full chatbot. There is no pencil button. Anna's avatar should stay large and stable while chatting. Mini answers should be short, direct, and invite full chat only when sources/details would help.
+- In minimized mode, hovering or focusing the message bubble reveals an inline quick-chat input instead of opening the full chatbot. The input auto-hides when the visitor stops hovering/focusing the minimized widget. There is no pencil button. Anna's avatar should stay large and stable while chatting. Mini answers should be short, direct, and opening full chat after mini chat should preserve the mini conversation.
 
 Implementation priority:
 

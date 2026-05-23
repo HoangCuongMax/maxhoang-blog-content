@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
+- Chatbot minimized UX: auto-hides the hover quick-chat input when the visitor leaves it and preserves mini chat turns when opening the full chatbot.
 - Chatbot minimized UX: replaced the pencil quick-chat trigger with hover/focus on the minimized message, kept Anna's avatar large/stable, fixed desktop expanded overlay sizing, and routed small talk to direct natural answers.
 - Chatbot minimized UX: added pencil-triggered inline quick chat with short mini answers and an option to open full chat for sources/details.
 - Chatbot UX: added first-open welcome/onboarding behaviour and anti-repetition conversation rules so Anna answers greetings, identity, and help questions directly before retrieval.

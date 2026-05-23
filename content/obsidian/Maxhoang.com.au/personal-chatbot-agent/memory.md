@@ -95,7 +95,7 @@ Today: **local JSON embeddings file** + `JsonRetriever`. Later: optional **Supab
 - On desktop, the open chatbot is a right-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
 - Anna uses warmer identity copy, rotating status text, conversational suggested questions, and a stronger assistant/researcher/collaborator personality layer.
 - General chat, greetings, identity questions, capability questions, and small talk such as "How are you?" are handled directly before retrieval so Anna does not search the site for basic conversation.
-- Minimized widget reveals an inline quick-chat input when the visitor hovers or focuses the message bubble. It calls `/api/chat` with `mode: "mini"` and shows short 1-2 sentence answers without opening the full chatbot. The avatar stays large and fixed in place while the mini input opens.
+- Minimized widget reveals an inline quick-chat input when the visitor hovers or focuses the message bubble, then auto-hides it when hover/focus leaves the minimized widget. It calls `/api/chat` with `mode: "mini"` and shows short 1-2 sentence answers without opening the full chatbot. Mini turns are preserved and passed into the full chatbot when opened so the conversation continues instead of restarting. The avatar stays large and fixed in place while the mini input opens.
 - Desktop expand mode should become a true fullscreen overlay while the normal open state remains a full-height right-side sidebar.
 
 ## Environment (names only; values in `.env`)

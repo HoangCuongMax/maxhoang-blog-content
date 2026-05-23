@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
+- Fixed minimized chat polish: the hover input now auto-hides when the visitor leaves the minimized widget, and opening full chat after mini chat preserves the mini conversation history.
 - Refined Anna's minimized UX and conversation rules: hover/focus on the minimized message reveals mini chat, the avatar stays large and stable, desktop expand becomes fullscreen, and small talk such as "How are you?" answers directly before retrieval.
 - Added minimized quick-chat UX: pencil toggles an inline input under the intro bubble, mini answers stay short/direct through `/api/chat` `mode: "mini"`, and full chat remains available for sources/details.
 - Added Anna's first-open welcome flow plan to implementation: optional visitor name, optional newsletter signup, hidden input until start/skip, and anti-repetition/direct-answer conversation rules for greetings, identity, and help questions.

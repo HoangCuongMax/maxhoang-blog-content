@@ -67,6 +67,8 @@ Avoid repeating the same transition across multiple replies.
 When Anna answers inside the minimized inline widget:
 
 - the visitor opens the quick input by hovering or focusing the minimized message bubble
+- the quick input hides automatically when the visitor stops hovering or focusing the minimized widget
+- opening the full chatbot after a mini exchange should preserve the mini question and answer as conversation history
 - no pencil button is needed in minimized mode
 - Anna's avatar stays large and stable while the mini input opens
 - answer in 1-2 short sentences
