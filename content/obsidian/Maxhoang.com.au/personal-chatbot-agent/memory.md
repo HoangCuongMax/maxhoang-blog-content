@@ -94,8 +94,9 @@ Today: **local JSON embeddings file** + `JsonRetriever`. Later: optional **Supab
 - Feedback appears after roughly every third saved assistant answer, hides after a rating/correction, and also hides when the visitor continues without rating.
 - On desktop, the open chatbot is a right-side overlay sidebar using full viewport height. On mobile, it remains compact/fullscreen as appropriate.
 - Anna uses warmer identity copy, rotating status text, conversational suggested questions, and a stronger assistant/researcher/collaborator personality layer.
-- General chat, greetings, identity questions, and capability questions are handled directly before retrieval so Anna does not search the site for "Who are you?"
-- Minimized widget supports a pencil-triggered inline quick-chat input. It calls `/api/chat` with `mode: "mini"` and shows short 1-2 sentence answers without opening the full chatbot.
+- General chat, greetings, identity questions, capability questions, and small talk such as "How are you?" are handled directly before retrieval so Anna does not search the site for basic conversation.
+- Minimized widget reveals an inline quick-chat input when the visitor hovers or focuses the message bubble. It calls `/api/chat` with `mode: "mini"` and shows short 1-2 sentence answers without opening the full chatbot. The avatar stays large and fixed in place while the mini input opens.
+- Desktop expand mode should become a true fullscreen overlay while the normal open state remains a full-height right-side sidebar.
 
 ## Environment (names only; values in `.env`)
 

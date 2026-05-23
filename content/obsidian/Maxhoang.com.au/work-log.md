@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-23
 
+- Chatbot minimized UX: replaced the pencil quick-chat trigger with hover/focus on the minimized message, kept Anna's avatar large/stable, fixed desktop expanded overlay sizing, and routed small talk to direct natural answers.
 - Chatbot minimized UX: added pencil-triggered inline quick chat with short mini answers and an option to open full chat for sources/details.
 - Chatbot UX: added first-open welcome/onboarding behaviour and anti-repetition conversation rules so Anna answers greetings, identity, and help questions directly before retrieval.
 - Chatbot UI: moved Anna's desktop full-height overlay sidebar to the right edge and updated chatbot agent docs.
