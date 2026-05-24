@@ -13,6 +13,14 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-25
+
+- Blog cover generator: regenerated all current blog post cover PNGs and updated post frontmatter to use static `/blog-covers/` assets.
+
+## 2026-05-24
+
+- Blog cover generator: finished the `max-journal` generated cover system in `MaxHoang_Notion/scripts/generate-covers.mjs`, improved fallback blog covers, and updated cover-generator agent documentation.
+
 ## 2026-05-23
 
 - Chatbot minimized UX: auto-hides the hover quick-chat input when the visitor leaves it and preserves mini chat turns when opening the full chatbot.

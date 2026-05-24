@@ -13,26 +13,30 @@ tags:
 
 ## Summary
 
-Create a living markdown plan in this folder, then implement a standalone cover generator in `MaxHoang_Notion` that creates missing 1200x630 blog cover images and links them from post frontmatter.
+Implement and maintain a standalone cover generator in `MaxHoang_Notion` that creates missing 1200x630 blog cover images and links them from post frontmatter.
 
 ## Key Changes
 
-- Add dependencies to `MaxHoang_Notion`: `gray-matter`, `fast-glob`, `satori`, `sharp`, and `reading-time`.
-- Add `generate:covers` as an npm script that runs `node scripts/generate-covers.mjs`.
-- Create `MaxHoang_Notion/scripts/generate-covers.mjs`.
+- Dependencies in `MaxHoang_Notion`: `gray-matter`, `fast-glob`, `satori`, `sharp`, and `reading-time`.
+- `generate:covers` npm script runs `node scripts/generate-covers.mjs`.
+- Generator script: `MaxHoang_Notion/scripts/generate-covers.mjs`.
 - Generate images into `MaxHoang_Notion/public/blog-covers/{slug}.png`.
 - Update affected markdown posts with `coverImage: /blog-covers/{slug}.png`.
+- Add `mediaAltText` for generated covers.
 
 ## Generator Behavior
 
 - Scan local posts from `../maxhoang-blog-content/content/posts/**/*.md`.
-- Generate a cover only when `coverImage`, `cover`, and `image` are missing, empty, or set to `auto`.
-- Skip posts with existing real cover URLs, YouTube cover values, or local image paths.
+- Generate a cover only when `coverImage`, `cover`, and `image` are missing, empty, set to `auto`, or contain a video URL rather than a real image cover.
+- Treat existing `/blog-covers/` values as generator-owned assets that can be refreshed with `--force`.
+- Skip posts with existing real image URLs or local image paths.
 - Read `title`, `description` or `excerpt`, `date`, `tags`, `slug`, cover fields, and optional `coverTemplate`.
 - Use the frontmatter slug, falling back to a title slug.
-- Support `clean-tech`, `dark-ai`, and `minimal-editorial` templates.
-- Choose a missing `coverTemplate` deterministically from the slug.
+- Use one consistent `max-journal` visual system.
+- Map legacy `clean-tech`, `dark-ai`, and `minimal-editorial` template names to `max-journal`.
+- Choose deterministic accent colours from the slug, title, and tags.
 - Do not overwrite existing generated PNGs unless run with `--force`.
+- Skip posts with `published: false`.
 
 ## Site Integration
 

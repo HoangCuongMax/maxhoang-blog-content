@@ -32,6 +32,13 @@ npm run build
 
 When the generator exists, use the project script documented in `blog-cover-generator-implementation-plan.md`.
 
+```bash
+npm run generate:covers
+npm run generate:covers -- --force
+```
+
+Use `--force` when refreshing existing generated `/blog-covers/` assets into the current visual system.
+
 ## Verification
 
 - Confirm posts with manual covers are unchanged.

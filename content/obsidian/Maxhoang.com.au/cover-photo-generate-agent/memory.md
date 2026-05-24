@@ -22,12 +22,12 @@ tags:
 - Content vault: `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - Cover agent folder: `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/cover-photo-generate-agent`
 - Blog posts: `maxhoang-blog-content/content/posts`
-- Planned generated covers: `MaxHoang_Notion/public/blog-covers`
-- Planned generator script: `MaxHoang_Notion/scripts/generate-covers.mjs`
+- Generated covers: `MaxHoang_Notion/public/blog-covers`
+- Generator script: `MaxHoang_Notion/scripts/generate-covers.mjs`
 
-## Current plan
+## Current implementation
 
-The current implementation plan is documented in `blog-cover-generator-implementation-plan.md`.
+The implementation is documented in `blog-cover-generator-implementation-plan.md`.
 
 Expected flow:
 
@@ -43,4 +43,7 @@ Blog Markdown without cover
 
 - First implementation focuses on blog posts.
 - Generated covers are local static assets committed in the app repo.
-- Existing manual covers should remain unchanged.
+- Existing manual image covers should remain unchanged.
+- YouTube/Vimeo links in `coverImage`, `cover`, or `image` are treated as non-image values, so the generator can replace them with real static PNG covers while the post keeps its `videoUrl`.
+- Existing `/blog-covers/` frontmatter values are generator-owned and can be refreshed with `npm run generate:covers -- --force`.
+- Covers use a consistent Max Hoang Journal layout with deterministic accent colours based on the post slug, title, and tags.

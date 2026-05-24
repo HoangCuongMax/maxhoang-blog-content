@@ -9,6 +9,7 @@ excerpt: A personal note on persistent agent memory, reusable agent skills, and 
 tags: [AI, Agents, Automation, Coding Agents, Browser Automation]
 sourceUrl: https://github.com/rohitg00/agentmemory
 coverImage: /blog-covers/agent-memory-skills-and-browser-automation.png
+mediaAltText: "Generated cover for Agent Memory, Skills, and Browser Automation"
 ---
 Today I collected a few repositories that feel connected in my mind:
 

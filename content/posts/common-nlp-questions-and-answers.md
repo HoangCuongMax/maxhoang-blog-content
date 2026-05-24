@@ -7,6 +7,8 @@ featured: true
 status: Published
 excerpt: A study note answering common NLP questions about ABSA, tokenisation, Naive Bayes, vector semantics, logistic regression, RAG, fine-tuning, hallucinations, and ethics.
 tags: [NLP, Machine Learning, Text Classification, LLMs, Study Notes]
+coverImage: /blog-covers/common-nlp-questions-and-answers.png
+mediaAltText: "Generated cover for Common NLP Questions and Answers"
 ---
 
 # Common NLP Questions and Answers

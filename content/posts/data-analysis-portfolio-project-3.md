@@ -1,15 +1,16 @@
 ---
-title: Data Analysis Portfolio Project #3 | End-to-End SQL to Dashboard
+title: "Data Analysis Portfolio Project #3 | End-to-End SQL to Dashboard"
 slug: data-analysis-portfolio-project-3-end-to-end-sql-to-dashboard
 published: true
 date: 2026-04-30
 featured: true
 status: Published
-coverImage: https://www.youtube.com/watch?v=oQSX_y2wfhc&list=PLi5spBcf0UMXfbMt1X2bHQkk7mHXkTUhs&index=4
+coverImage: /blog-covers/data-analysis-portfolio-project-3-end-to-end-sql-to-dashboard.png
 videoUrl: https://www.youtube.com/watch?v=oQSX_y2wfhc
 excerpt: A good YouTube series about building an SQL database and connecting it with Power BI to create a full analytics dashboard.
 tags: []
 sourceUrl: https://www.notion.so/352792d80ba38066a919e17c1cd29f1e
+mediaAltText: "Generated cover for Data Analysis Portfolio Project #3 | End-to-End SQL to Dashboard"
 ---
 
 Today, I found a good YouTube series about how to build an SQL database and connect it with Power BI to create a full analytics dashboard.

@@ -1,14 +1,15 @@
 ---
-title: Data Analyst Portfolio Project #1 | Build a Database | Develop SQL | Create a Dashboard
+title: "Data Analyst Portfolio Project #1 | Build a Database | Develop SQL | Create a Dashboard"
 slug: data-analyst-portfolio-project-1-build-a-database-develop-sql-create-a-dashboard
 published: true
 date: 2026-05-05
 featured: true
-coverImage: https://www.youtube.com/watch?v=S2zBHmkRbhY
+coverImage: /blog-covers/data-analyst-portfolio-project-1-build-a-database-develop-sql-create-a-dashboard.png
 videoUrl: https://www.youtube.com/watch?v=S2zBHmkRbhY
 excerpt: I am going to use Excel, Microsoft SQL Server Management Studio, and Power BI to follow a data analyst portfolio project.
 tags: []
 sourceUrl: https://www.notion.so/356792d80ba3801fb1abcf3c96a9112d
+mediaAltText: "Generated cover for Data Analyst Portfolio Project #1 | Build a Database | Develop SQL | Create a Dashboard"
 ---
 
 These questions and step-by-step screenshots were stored in Notion as temporary signed file URLs. They should be downloaded and rehosted as stable website images before publishing them as permanent visual assets.
