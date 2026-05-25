@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-25
 
+- Blog/content management: added the root-level `content/Daily Journal` workflow, Daily Journal Obsidian template, and agent documentation for private Admin Assistant publishing.
 - Blog cover generator: regenerated all current blog post cover PNGs and updated post frontmatter to use static `/blog-covers/` assets.
 
 ## 2026-05-24

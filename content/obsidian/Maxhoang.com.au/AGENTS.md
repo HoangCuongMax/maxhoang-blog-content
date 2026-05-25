@@ -44,12 +44,14 @@ The runnable website app is the **MaxHoang_Notion** Next.js repo. The Markdown/c
 | Awards | `maxhoang-blog-content/content/awards/` | Award entries and recognition content used by the public site. |
 | Events | `maxhoang-blog-content/content/events/` | Event entries, dates, descriptions, images, and publishing status. |
 | Obsidian notes | `maxhoang-blog-content/content/obsidian/` | Internal notes, learning references, and agent docs; do not expose drafts/private notes. |
+| Daily Journal | `maxhoang-blog-content/content/Daily Journal/` | Obsidian Daily Notes folder. Notes are always included by the website loader but remain locked behind Admin Assistant. |
+| Obsidian templates | `maxhoang-blog-content/content/Templates/` | Reusable Obsidian templates, including the Daily Journal Post template used by Daily Notes. |
 | Website agent docs | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/` | Website-wide agent router, instructions, memory, workflow, sub-agents, and work log. |
 
 ## Routing work to sub-agents
 
 - Chatbot, RAG, persona, answer quality, and source UI: `personal-chatbot-agent/`.
-- Public Markdown publishing, frontmatter, and content loaders: `blog-content-management-agent/`.
+- Public Markdown publishing, private Daily Journal publishing, frontmatter, and content loaders: `blog-content-management-agent/`.
 - Sidebar links, navigation, collapse/mobile behaviour, and sidebar accessibility: `side-bar-navigation-agent/`.
 - Metadata, titles, descriptions, Open Graph, and previews: `seo-metadata-agent/`.
 - Layout polish, responsive hierarchy, empty states, and visual quality: `ui-ux-improvement-agent/`.
@@ -67,7 +69,7 @@ Each subfolder under this folder is a focused sub-agent. Before working in a sub
 |---|---|---|
 | Accessibility review | `accessibility-review-agent/` | Keyboard access, labels, media alt text, reduced motion, contrast, and semantic HTML. |
 | Anna chatbot | `personal-chatbot-agent/` | Website chatbot, RAG, persona, chat UI, and chatbot docs. |
-| Blog/content management | `blog-content-management-agent/` | Public Markdown workflow, publishing rules, frontmatter, and content loaders. |
+| Blog/content management | `blog-content-management-agent/` | Public Markdown workflow, private Daily Journal workflow, publishing rules, frontmatter, and content loaders. |
 | Code cleanup/refactor | `code-cleanup-refactor-agent/` | Maintainability, unused-code cleanup, naming, helper placement, and behaviour-preserving refactors. |
 | Cover photo generator | `cover-photo-generate-agent/` | Blog cover generation workflow, cover scripts, metadata, and image output rules. |
 | Motion effects | `motion-effect-agent/` | Website animation, Motion usage, reduced-motion behaviour, and animation work notes. |

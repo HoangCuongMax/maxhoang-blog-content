@@ -26,6 +26,8 @@ Use this note for stable facts: repos, paths, architecture, content model, and s
 - **Website app:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/MaxHoang_Notion`
 - **Content vault:** `/Users/maxhoang/Library/Mobile Documents/iCloud~md~obsidian/Documents/Max Hoang Blog/maxhoang-blog-content`
 - **Website agent folder:** `maxhoang-blog-content/content/obsidian/Maxhoang.com.au`
+- **Daily Journal folder:** `maxhoang-blog-content/content/Daily Journal`
+- **Obsidian templates folder:** `maxhoang-blog-content/content/Templates`
 
 ## High-level architecture
 
@@ -43,7 +45,7 @@ Feature-specific pipelines are documented in sub-agent folders.
 | Area | Folder | Notes |
 |---|---|---|
 | Accessibility review | `accessibility-review-agent/` | Keyboard, labels, media alt text, reduced motion, contrast, and semantic HTML. |
-| Blog/content management | `blog-content-management-agent/` | Public content workflow, Markdown frontmatter, publishing rules, and content loaders. |
+| Blog/content management | `blog-content-management-agent/` | Public content workflow, private Daily Journal workflow, Markdown frontmatter, publishing rules, and content loaders. |
 | Code cleanup/refactor | `code-cleanup-refactor-agent/` | Maintainability, dead-code cleanup, naming, helper placement, and reviewable refactors. |
 | Personal chatbot / Anna | `personal-chatbot-agent/` | RAG chatbot, persona, UI, API, embeddings, and chatbot-specific workflow. |
 | Blog cover generator | `cover-photo-generate-agent/` | Generated blog covers, cover metadata rules, image script planning. |
@@ -75,9 +77,13 @@ Common content areas in `maxhoang-blog-content/content`:
 - `awards/` - awards and recognition.
 - `events/` - event entries.
 - `obsidian/` - notes, internal planning, learning references, and agent folders.
+- `Daily Journal/` - Obsidian Daily Notes folder. The website includes these notes automatically but renders them only behind Admin Assistant.
+- `Templates/` - Obsidian templates. `Templates/Daily Journal Post.md` is configured as the Daily Notes template in `content/.obsidian/daily-notes.json`.
 
 Publishing depends on the site's frontmatter and loader rules. Internal agent notes should stay unpublished unless intentionally turned into public content.
+Daily Journal notes use `publish: true` for the private website route, but they are not public blog posts and must not be indexed into the public chatbot corpus.
 
 ## Changelog
 
+- **2026-05-25:** Added root-level Daily Journal workflow, Daily Journal Post Obsidian template, and Admin Assistant privacy rule for private journal publishing.
 - **2026-05-20:** Introduced website-level agent folder for MaxHoang.com.au and formalized sub-agent reporting.
