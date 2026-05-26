@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-26
 
+- Fixed Anna's NLP training answer path in `MaxHoang_Notion`: approved NLP Q&A now has a direct chatbot answer layer, training memory can be used as answer context, and relevant brain excerpts are prioritized.
 - Added Max-approved NLP chatbot Q&A training to `markdown-brain/training/nlp-chatbot-training.md` and kept the source note in the chatbot agent folder for Anna's future retrieval/indexing.
 
 ## 2026-05-23
