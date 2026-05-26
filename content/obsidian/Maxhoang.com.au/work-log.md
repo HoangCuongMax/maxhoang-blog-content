@@ -13,6 +13,10 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-26
+
+- Chatbot learning: added approved NLP chatbot Q&A training into Anna's active `markdown-brain/training` memory and kept the source note under the personal chatbot agent.
+
 ## 2026-05-25
 
 - Blog/content management: added the root-level `content/Daily Journal` workflow, Daily Journal Obsidian template, and agent documentation for private Admin Assistant publishing.

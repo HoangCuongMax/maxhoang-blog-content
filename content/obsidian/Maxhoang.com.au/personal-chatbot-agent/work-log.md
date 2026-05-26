@@ -13,6 +13,10 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-26
+
+- Added Max-approved NLP chatbot Q&A training to `markdown-brain/training/nlp-chatbot-training.md` and kept the source note in the chatbot agent folder for Anna's future retrieval/indexing.
+
 ## 2026-05-23
 
 - Fixed minimized chat polish: the hover input now auto-hides when the visitor leaves the minimized widget, and opening full chat after mini chat preserves the mini conversation history.
