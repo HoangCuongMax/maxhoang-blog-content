@@ -51,6 +51,7 @@ The runnable website app is the **MaxHoang_Notion** Next.js repo. The Markdown/c
 ## Routing work to sub-agents
 
 - Chatbot, RAG, persona, answer quality, and source UI: `personal-chatbot-agent/`.
+- Admin Assistant mode, private admin controls, Daily Journal creation, admin auth UI, and admin action grouping: `admin-assistant-agent/`.
 - Public Markdown publishing, private Daily Journal publishing, frontmatter, and content loaders: `blog-content-management-agent/`.
 - Sidebar links, navigation, collapse/mobile behaviour, and sidebar accessibility: `side-bar-navigation-agent/`.
 - Metadata, titles, descriptions, Open Graph, and previews: `seo-metadata-agent/`.
@@ -68,6 +69,7 @@ Each subfolder under this folder is a focused sub-agent. Before working in a sub
 | Sub-agent | Folder | Responsibility |
 |---|---|---|
 | Accessibility review | `accessibility-review-agent/` | Keyboard access, labels, media alt text, reduced motion, contrast, and semantic HTML. |
+| Admin Assistant | `admin-assistant-agent/` | Private admin controls, Daily Journal creation, admin session UI, and admin action workflows. |
 | Anna chatbot | `personal-chatbot-agent/` | Website chatbot, RAG, persona, chat UI, and chatbot docs. |
 | Blog/content management | `blog-content-management-agent/` | Public Markdown workflow, private Daily Journal workflow, publishing rules, frontmatter, and content loaders. |
 | Code cleanup/refactor | `code-cleanup-refactor-agent/` | Maintainability, unused-code cleanup, naming, helper placement, and behaviour-preserving refactors. |

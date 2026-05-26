@@ -15,6 +15,8 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-26
 
+- Admin Assistant: implemented distinct private console UI, removed redundant chat-message admin controls, and added authenticated Daily Journal post creation from Admin Assistant and the Daily Journal page.
+- Agent structure: created `admin-assistant-agent/` to own private Admin Assistant UI, admin controls, and Daily Journal post creation planning.
 - Chatbot answers: fixed Anna's NLP training path so questions from the approved chatbot training file can be answered directly in the app while preserving published-content rules for Max-specific claims.
 - Chatbot learning: added approved NLP chatbot Q&A training into Anna's active `markdown-brain/training` memory and kept the source note under the personal chatbot agent.
 
