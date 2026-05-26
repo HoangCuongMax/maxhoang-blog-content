@@ -34,6 +34,8 @@ Use this note for stable facts about the Admin Assistant system.
 | Daily Journal pages | `MaxHoang_Notion/app/daily-journal/` |
 | Daily Journal admin form | `MaxHoang_Notion/components/daily-journal-admin-tools.tsx` |
 | Content loaders | `MaxHoang_Notion/lib/content.ts`, `MaxHoang_Notion/lib/vault.ts` |
+| TinaCMS schema | `MaxHoang_Notion/tina/config.ts` |
+| TinaCMS static admin | `MaxHoang_Notion/public/admin/index.html` |
 
 ## Important Content Areas
 
@@ -42,6 +44,9 @@ Use this note for stable facts about the Admin Assistant system.
 | Daily Journal entries | `maxhoang-blog-content/content/Daily Journal/` |
 | Daily Journal template | `maxhoang-blog-content/content/Templates/Daily Journal Post.md` |
 | Admin Assistant docs | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/admin-assistant-agent/` |
+| Chatbot FAQs | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/faq/` |
+| Project knowledge | `maxhoang-blog-content/content/obsidian/Maxhoang.com.au/project-knowledge/` |
+| Tina separate repo marker | `maxhoang-blog-content/tina/` |
 
 ## Current Problem
 
@@ -61,3 +66,7 @@ Daily Journal should support direct post creation after admin login, both from t
 - `POST /api/daily-journal` creates Daily Journal Markdown posts after admin authentication.
 - The Daily Journal page shows a "New Daily Journal Post" form after admin login.
 - The create route writes to GitHub when `OBSIDIAN_VAULT_GITHUB_TOKEN` or `GITHUB_TOKEN` exists, otherwise it falls back to the local sibling `maxhoang-blog-content` repo.
+- TinaCMS is installed in `MaxHoang_Notion` and configured as a browser Content Studio for the separate `maxhoang-blog-content` repo.
+- The Admin Assistant private console includes an "Open TinaCMS Content Studio" action that opens `/admin/index.html`.
+- TinaCMS collections cover Daily Journal, blog posts, presentation slides, Anna personality/rules, Admin Assistant docs, FAQs, and project knowledge.
+- Local builds use `tinacms build --local --skip-cloud-checks --skip-indexing` through Node with a larger heap because the content repo is large.
