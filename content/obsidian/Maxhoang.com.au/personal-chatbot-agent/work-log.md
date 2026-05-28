@@ -13,6 +13,11 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-28
+
+- Implemented the first direct conversation layer in `MaxHoang_Notion`: microphone dictation for Anna's chat input, optional browser speech output for Anna replies, and TinaCMS client ID wiring for Vercel/public env configuration.
+- Added `anna-presentation-demo-and-voice-chat-plan.md` with a detailed 1-minute Anna demo script, presentation audit, fallback lines, and a phased implementation plan for direct voice conversation with Anna.
+
 ## 2026-05-26
 
 - Fixed Anna's NLP training answer path in `MaxHoang_Notion`: approved NLP Q&A now has a direct chatbot answer layer, training memory can be used as answer context, and relevant brain excerpts are prioritized.

@@ -13,6 +13,13 @@ tags:
 
 Short dated entries. **Newest first.**
 
+## 2026-05-28
+
+- Chatbot voice implementation: added browser microphone dictation and optional spoken Anna replies, configured the TinaCMS public client ID for Vercel/env usage, and verified the website production build.
+- UI/UX planning: added a Google Design / Material-inspired implementation plan for improving MaxHoang.com.au's design system, homepage/blog flow, Anna assistant UX, page polish, reusable states, and responsive accessibility QA.
+- UI/UX implementation: applied the first Google Design pass with neutral-blue Material-style theme tokens, calmer shared component states, clearer Notes/Slides navigation labels, homepage action-path cards, and a less intrusive Anna launcher.
+- Chatbot presentation planning: added a detailed Anna 1-minute demo conversation, audit, fallback plan, and voice-chat implementation roadmap under the personal chatbot agent.
+
 ## 2026-05-26
 
 - Admin Assistant: implemented distinct private console UI, removed redundant chat-message admin controls, and added authenticated Daily Journal post creation from Admin Assistant and the Daily Journal page.
