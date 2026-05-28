@@ -15,6 +15,7 @@ Short dated entries. **Newest first.**
 
 ## 2026-05-28
 
+- Improved Anna's direct interaction layer: removed the chat input scrollbar, added voice pause-to-send after 1.5 seconds, fixed voice transcript sending, enabled spoken Anna replies for voice messages, and added an inline "Ask Anna" selection popover for highlighted website text.
 - Implemented the first direct conversation layer in `MaxHoang_Notion`: microphone dictation for Anna's chat input, optional browser speech output for Anna replies, and TinaCMS client ID wiring for Vercel/public env configuration.
 - Added `anna-presentation-demo-and-voice-chat-plan.md` with a detailed 1-minute Anna demo script, presentation audit, fallback lines, and a phased implementation plan for direct voice conversation with Anna.
 
